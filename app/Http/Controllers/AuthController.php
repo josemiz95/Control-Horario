@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -54,7 +55,7 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request){
-        auth()->user()->currentAccessToken()->delete();
+        Auth::user()->currentAccessToken()->delete();
 
         $response = [
             'message' => 'Logged out successfully.'
@@ -64,7 +65,7 @@ class AuthController extends Controller
     }
 
     public function logout_everywhere(Request $request){
-        auth()->user()->tokens()->delete();
+        Auth::user()->tokens()->delete();
 
         $response = [
             'message' => 'Logged out successfully.'
