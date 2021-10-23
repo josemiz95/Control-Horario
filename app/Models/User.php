@@ -18,14 +18,14 @@ class User extends Authenticatable
         'role_id',
         'name',
         'email',
-        'password',
-        'api_token'
+        'password'
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
-        'api_token'
+        'created_at',
+        'updated_at'
     ];
 
     public function role(){
