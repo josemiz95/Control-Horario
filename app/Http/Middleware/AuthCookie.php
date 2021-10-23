@@ -30,6 +30,8 @@ class AuthCookie
                 return $next($request);
             }
         }
+
+        Auth::logout();
         return route('login');
     }
 }
