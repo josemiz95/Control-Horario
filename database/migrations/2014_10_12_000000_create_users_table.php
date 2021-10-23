@@ -16,30 +16,30 @@ class CreateUsersTable extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('visible');
+            $table->boolean('visible')->default(1);
         });
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('role_id')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('api_token');
+            $table->string('api_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('set null');
         });
 
         Schema::create('access', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('description');
         });
 
         Schema::create('roles_access', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('role_id')->unique();
             $table->unsignedBigInteger('access_id');
             
             $table->primary(['role_id','access_id']);
