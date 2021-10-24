@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
+    return view('login');
 });
 
 /*El token de inicio de sesion se guardara en una cookie por lo cual se podra comprobar si existe la sesion y que usuario esta con la sesion iniciada
