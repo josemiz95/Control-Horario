@@ -71,7 +71,7 @@ section .contentBox{
         letter-spacing: 1px;
         color: var(--secondary);
         background: transparent;
-        border-radius: 10px;
+        border-radius: 15px;
     }
     section .contentBox .formBox .inputBox input[type="submit"]{
         background: var(--primary);
@@ -109,6 +109,6 @@ section .contentBox{
         padding: 40px;
         background: var(--white);
         margin: 50px;
-        border-radius: 10px;
+        border-radius: 15px;
     }
 }
