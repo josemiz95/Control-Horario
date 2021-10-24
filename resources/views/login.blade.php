@@ -12,7 +12,7 @@
     {{-- CSS --}}
     <link rel="stylesheet" href="{{config('app.url')}}/css/colors.css" id="colors-css">
     <link rel="stylesheet" href="{{config('app.url')}}/css/app.css">
-    <link rel="stylesheet" href="{{config('app.url')}}/css/login.css">
+    <link rel="stylesheet" href="{{config('app.url')}}/css/pages/login.css">
 </head>
 
 <body data-sidebar="dark">
