@@ -16,7 +16,6 @@
 </head>
 
 <body data-sidebar="dark">
-
     <div class="container-fluid">
         <section class="row">
             <div class="imgBox col-12 col-lg-7">
@@ -44,5 +43,4 @@
     </div>
     
 </body>
-
 </html>
