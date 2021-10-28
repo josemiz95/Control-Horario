@@ -11,88 +11,83 @@ body{
     position: relative;
     width: 100%;
 }
-/* Navigation */
+
+
+/****** Navigation *******/
 .navigation {
     position: fixed;
     width: 300px;
     height: 100%;
     background-color: var(--nav-color, var(--primary));
-    border-left:10px solid var(--nav-color, var(--primary));
     transition: 0.5s;
     overflow:hidden;
 }
+    .navigation .logoContainer{
+        background: grey;
+        height: 70px;
+        width: 100%;
+    }
 
-.navigation ul{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.navigation ul li {
-    position: relative;
-    width: 100%;
-    list-style: none;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-.navigation ul li:hover, .navigation ul li.active{
-    background: var(--white);
-}
-.navigation ul li a{
-    position: relative;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--white);
-}
-.navigation ul li a{
-    padding-left: 20px;
-}
-.navigation ul li:hover a, .navigation ul li.active a{
-    color: var(--nav-color, var(--primary));
-}
-.navigation ul li a .icon{
-    position: relative;
-    display: block;
-    min-width: 60px;
-    text-align: center;
-}
-.navigation ul li a ion-icon{
-    font-size: 1.75em;
-}
-.navigation ul li a .title {
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    text-align: start;
-    white-space: nowrap;
-}
-
-/* Curvas opuestas */
-.navigation ul li:hover a::before, .navigation ul li.active a::before{
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
-    box-shadow: 35px 35px 0 10px var(--white);
-    pointer-events: none;
-}
-.navigation ul li:hover a::after,
-.navigation ul li.active a::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
-    box-shadow: 35px -35px 0 10px var(--white);
-    pointer-events: none;
-}
+    .navigation ul.navContainer{
+        padding-left:15px;
+        margin-top: 30px;
+        width: 100%;
+    }
+        .navigation ul.navContainer li {
+            position: relative;
+            width: 100%;
+            list-style: none;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .navigation ul.navContainer li:hover, 
+        .navigation ul.navContainer li.active{
+            background: var(--white);
+        }
+        .navigation ul.navContainer li a{
+            position: relative;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--white);
+        }
+        .navigation ul.navContainer li a{
+            padding-left: 20px;
+        }
+        .navigation ul.navContainer li:hover a, 
+        .navigation ul.navContainer li.active a{
+            color: var(--nav-color, var(--primary));
+        }
+        .navigation ul.navContainer li a ion-icon{
+            font-size: 1.75em;
+        }
+        .navigation ul.navContainer li a .title {
+            position: relative;
+            display: block;
+            padding: 0 10px;
+            white-space: nowrap;
+        }
+        .navigation ul.navContainer li:hover a::before,
+        .navigation ul.navContainer li.active a::before,
+        .navigation ul.navContainer li:hover a::after,
+        .navigation ul.navContainer li.active a::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            pointer-events: none;
+        }
+        .navigation ul.navContainer li:hover a::before,
+        .navigation ul.navContainer li.active a::before{
+            top: -50px;
+            box-shadow: 35px 35px 0 10px var(--white);
+        }
+        .navigation ul.navContainer li:hover a::after,
+        .navigation ul.navContainer li.active a::after{
+            bottom: -50px;
+            box-shadow: 35px -35px 0 10px var(--white);
+        }

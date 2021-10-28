@@ -3,6 +3,6 @@
 @yield('css') {{-- CSS DE PLUGINS --}}
 
 <link rel="stylesheet" href="{{config('app.url')}}/css/colors.css">
-<link href="{{ config('app.url') }}css/app.css" rel="stylesheet" type="text/css" />
+<link href="{{ config('app.url') }}/css/app.css" rel="stylesheet" type="text/css" />
 
 @yield('css-bottom') {{-- CSS DE PAGINA --}}

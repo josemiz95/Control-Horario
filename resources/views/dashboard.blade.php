@@ -7,7 +7,8 @@
 @section('content')
     <div class="container-z">
         <div class="navigation">
-            <ul>
+            <div class="logoContainer"></div>
+            <ul class="navContainer">
                 <li>
                     <a href="">
                         <ion-icon name="globe-outline"></ion-icon>
