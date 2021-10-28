@@ -1,4 +1,5 @@
 :root{
+    /* Custom colors */
     --primary: #4596ff;
     --primary-hover: #2f88fc;
 
@@ -8,4 +9,8 @@
     --muted: #607d8b;
 
     --white: #fff;
+    --balck: #000;
+
+    /* Components */
+    /* --nav-color: #ff4949; */
 }

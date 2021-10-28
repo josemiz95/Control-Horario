@@ -7,10 +7,10 @@
         <link rel="icon" type="image/png" href="{{ config('app.url') }}/images/icon.png"/>
         <link rel="shortcut icon" href="{{ config('app.url') }}images/icon.png">
 
-        @include('layouts.head')
+        @include('shared.head')
     </head>
     <body data-sidebar="dark">
         @yield('content')
-        @include('layouts.footer')
+        @include('shared.footer')
     </body>
 </html>
