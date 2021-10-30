@@ -7,87 +7,158 @@ body{
     overflow-x: hidden; 
 }
 
-.container-z {
+.appContainer {
     position: relative;
     width: 100%;
 }
 
 
 /****** Navigation *******/
-.navigation {
+.navContainer {
     position: fixed;
-    width: 300px;
+    width: 215px;
     height: 100%;
     background-color: var(--nav-color, var(--primary));
     transition: 0.5s;
     overflow:hidden;
 }
-    .navigation .logoContainer{
+    .navContainer .logoContainer{
         background: grey;
-        height: 70px;
+        height: 60px;
         width: 100%;
     }
-
-    .navigation ul.navContainer{
-        padding-left:15px;
-        margin-top: 30px;
+    .navContainer ul{
+        padding-left:10px;
+        margin-top: 20px;
         width: 100%;
     }
-        .navigation ul.navContainer li {
+        .navContainer ul li {
             position: relative;
             width: 100%;
             list-style: none;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
-        .navigation ul.navContainer li:hover, 
-        .navigation ul.navContainer li.active{
+        .navContainer ul li.active{
             background: var(--white);
         }
-        .navigation ul.navContainer li a{
+        .navContainer ul li a{
             position: relative;
+            height: 45px;
             width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
+            display: block;
             text-decoration: none;
+            display: flex;
             color: var(--white);
+            padding-left: 10px;
         }
-        .navigation ul.navContainer li a{
-            padding-left: 20px;
-        }
-        .navigation ul.navContainer li:hover a, 
-        .navigation ul.navContainer li.active a{
+        .navContainer ul li.active a{
             color: var(--nav-color, var(--primary));
         }
-        .navigation ul.navContainer li a ion-icon{
-            font-size: 1.75em;
-        }
-        .navigation ul.navContainer li a .title {
+        .navContainer ul li a .icon{
             position: relative;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 35px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .navContainer ul li a .title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: start;
             padding: 0 10px;
             white-space: nowrap;
+            line-height: 50px;
+            transition: 0.5s;
         }
-        .navigation ul.navContainer li:hover a::before,
-        .navigation ul.navContainer li.active a::before,
-        .navigation ul.navContainer li:hover a::after,
-        .navigation ul.navContainer li.active a::after {
+        .navContainer ul li.active a::before,
+        .navContainer ul li.active a::after {
             content: '';
             position: absolute;
             right: 0;
             width: 50px;
             height: 50px;
-            border-radius: 15px;
+            border-radius: 10px;
             pointer-events: none;
         }
-        .navigation ul.navContainer li:hover a::before,
-        .navigation ul.navContainer li.active a::before{
+        .navContainer ul li.active a::before{
             top: -50px;
-            box-shadow: 35px 35px 0 10px var(--white);
+            box-shadow: 30px 35px 0 10px var(--white);
         }
-        .navigation ul.navContainer li:hover a::after,
-        .navigation ul.navContainer li.active a::after{
+        .navContainer ul li.active a::after{
             bottom: -50px;
-            box-shadow: 35px -35px 0 10px var(--white);
+            box-shadow: 50px -35px 0 10px var(--white);
         }
+
+    /******* Menu collapsed *******/
+    .navContainer.collapsed{
+        width: 60px;
+    }
+        .navContainer.collapsed ul li a .title {
+            color: transparent;
+        }
+
+
+/****** Main *******/
+.appContainer{
+    position: absolute;
+    width: calc(100% - 215px);
+    left: 215px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.topbar{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background: var(--topbar-color, var(--white));
+}
+    .topbar .toggle{
+        position: relative;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    /******* Menu collapsed *******/
+    .appContainer.collapsed{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+
+
+/****** Other Objects *******/
+/* Avatar */
+.avatar-user {
+    font-size: 11px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 500;
+    height: 30px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 30px;
+}
+    .avatar-user.circle {
+        border-radius: 50%!important;
+    }
+    .avatar-user.square {
+        border-radius: 10px!important;
+    }
