@@ -1,5 +1,5 @@
 // CONSTANT APP PARTS
-const actualNavigation = actualMenu? document.querySelector('#'+actualMenu): null;
+const actualNavigation = document.querySelector('#navMenu li.active');
 const navigation = document.querySelector('#navContainer');
 const main = document.querySelector('#appContainer');
 const navigationMenu = document.querySelector('#navMenu');
