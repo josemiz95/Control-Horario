@@ -50,7 +50,7 @@ body{
             text-decoration: none;
             display: flex;
             color: var(--white);
-            padding-left: 10px;
+            padding-left: 5px;
         }
         .navContainer ul li.active a{
             color: var(--nav-color, var(--primary));
@@ -63,6 +63,7 @@ body{
             min-width: 35px;
             font-size: 1.5em;
             text-align: center;
+            transition: 0.5s;
         }
         .navContainer ul li a .title {
             position: relative;

@@ -4,7 +4,14 @@ const navigation = document.querySelector('#navContainer');
 const main = document.querySelector('#appContainer');
 const navigationMenu = document.querySelector('#navMenu');
 const navigationList = document.querySelectorAll("#navMenu li");
-const menuToggle = document.querySelector('#menuToggle');
+const menuToggleBtn = document.querySelector('#menuToggle');
+
+// MENU TOGGLE
+const toggleNav = function(){
+    navigation.classList.toggle('collapsed');
+    main.classList.toggle('collapsed');
+}
+menuToggleBtn.addEventListener('click', toggleNav);
 
 // NAVIGATION EFFECT
 navigationList.forEach((item)=> item.addEventListener('mouseover',function() {
@@ -19,8 +26,3 @@ if(actualNavigation !== null){
     });
 }
 
-// MENU TOGGLE
-menuToggle.addEventListener('click', function(){
-    navigation.classList.toggle('collapsed');
-    main.classList.toggle('collapsed');
-})
