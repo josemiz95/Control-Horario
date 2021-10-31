@@ -139,7 +139,7 @@ h3{ font-size: 1rem; }
     justify-content: space-between;
     padding: 0 10px;
     background: var(--topbar-color, var(--white));
-    box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+    box-shadow: 0 0.75rem 1.5rem var(--shadow);
 }
     .appContainer .topbar div{
         display: flex;
