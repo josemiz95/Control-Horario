@@ -1,17 +1,19 @@
 /****** General *******/
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
 body{ 
     background: var(--white);
     min-height: 100vh;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 .appContainer {
     position: relative;
     width: 100%;
 }
-
+h1{ font-size: 1.5rem; }
+h2{ font-size: 1.23rem; }
+h3{ font-size: 1rem; }
 
 /****** Navigation *******/
 .navContainer {
@@ -22,11 +24,26 @@ body{
     transition: 0.5s;
     overflow:hidden;
 }
-    .navContainer .logoContainer{
-        background: grey;
+    /****** TOP CONTAINER *******/
+    .navContainer .topContainer{
+        position: relative;
         height: 60px;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+        .navContainer .topContainer .logo{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s;
+            max-width: 215px;
+            max-height: 60px;
+        }
+
+    /****** NAVIGATION CONTAINER *******/
     .navContainer ul{
         padding-left:10px;
         margin-top: 20px;
@@ -63,7 +80,6 @@ body{
             min-width: 35px;
             font-size: 1.5em;
             text-align: center;
-            transition: 0.5s;
         }
         .navContainer ul li a .title {
             position: relative;
@@ -73,7 +89,7 @@ body{
             padding: 0 10px;
             white-space: nowrap;
             line-height: 50px;
-            transition: 0.5s;
+            transition: opacity 0.5s;
         }
         .navContainer ul li.active a::before,
         .navContainer ul li.active a::after {
@@ -94,12 +110,15 @@ body{
             box-shadow: 50px -35px 0 10px var(--white);
         }
 
-    /******* Menu collapsed *******/
+    /******* MENU COLLAPSED *******/
     .navContainer.collapsed{
         width: 60px;
     }
-        .navContainer.collapsed ul li a .title {
-            color: transparent;
+        .navContainer.collapsed ul li a .title{
+            opacity: 0;
+        }
+        .navContainer.collapsed .topContainer .logo{
+            opacity: 0;
         }
 
 
@@ -109,36 +128,82 @@ body{
     width: calc(100% - 215px);
     left: 215px;
     min-height: 100vh;
-    background: var(--white);
     transition: 0.5s;
 }
 
-.topbar{
+.appContainer .topbar{
     width: 100%;
     height: 45px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 0 10px;
     background: var(--topbar-color, var(--white));
+    box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
 }
-    .topbar .toggle{
+    .appContainer .topbar div{
+        display: flex;
+        align-items: center;
+    }
+
+    .appContainer .topbar .toggle{
         position: relative;
-        width: 45px;
-        height: 45px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 2em;
-        cursor: pointer;
+        min-width: 35px;
+        font-size: 1.75em;
+        text-align: center;
+        transition: transform 0.5s;
+        color: var(--primary);
     }
-
+    .appContainer .topbar .toggle:hover{
+        color: var(--primary-hover);
+    }
+    .appContainer .topbar .breadcrumb ul{
+        padding: 10px 10px;
+        list-style: none;
+    }
+        .appContainer .topbar .breadcrumb ul li{
+            display: inline;
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-weight: 400;
+        }
+        .appContainer .topbar .breadcrumb ul li:last-child{
+            color: var(--black);
+            font-weight: 600;
+        }
+        .appContainer .topbar ul li+li:before {
+            padding: 0 8px;
+            color: var(--black);
+            content: ">";
+            color: var(--muted);
+            font-weight: 400;
+        }
+    .appContainer .topbar .user{
+        cursor: pointer;
+        padding: 0 5px;
+    }
+    .appContainer .topbar .settings{
+        font-size: 1.4rem;
+        color: var(--black);
+    }
+        .appContainer .topbar .settings .option{
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            padding: 0 5px;
+            cursor: pointer;
+        }
     /******* Menu collapsed *******/
     .appContainer.collapsed{
         width: calc(100% - 60px);
         left: 60px;
     }
-
+    .appContainer.collapsed .topbar .toggle {
+        transform: rotate(180deg);
+    }
 
 /****** Other Objects *******/
 /* Avatar */

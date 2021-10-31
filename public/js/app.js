@@ -1,15 +1,20 @@
 // CONSTANT APP PARTS
-const actualNavigation = document.querySelector('#navMenu li.active');
-const navigation = document.querySelector('#navContainer');
-const main = document.querySelector('#appContainer');
-const navigationMenu = document.querySelector('#navMenu');
-const navigationList = document.querySelectorAll("#navMenu li");
-const menuToggleBtn = document.querySelector('#menuToggle');
+    const colorsCss = document.querySelector('#colors-css');
+    const main = document.querySelector('#appContainer');
+    // Navigation
+    const navigation = document.querySelector('#navContainer');
+    const actualNavigation = document.querySelector('#navMenu li.active');
+    const navigationMenu = document.querySelector('#navMenu');
+    const navigationList = document.querySelectorAll("#navMenu li");
+    // Buttons
+    const menuToggleBtn = document.querySelector('#menuToggle');
+    const colorsModeBtn = document.querySelector('#colorsToggle');
 
 // MENU TOGGLE
 const toggleNav = function(){
     navigation.classList.toggle('collapsed');
     main.classList.toggle('collapsed');
+
 }
 menuToggleBtn.addEventListener('click', toggleNav);
 
@@ -26,3 +31,18 @@ if(actualNavigation !== null){
     });
 }
 
+// OTHER EFECTS
+colorsModeBtn.addEventListener('click', function(){
+    let actual = colorsCss.getAttribute('data-type');
+    if(actual == "ligth"){
+        // Dark
+        colorsCss.setAttribute('data-type','dark');
+        colorsCss.setAttribute('href',app.url+'/css/dark.css');
+        colorsModeBtn.querySelector('ion-icon').setAttribute('name','sunny-outline');
+    } else {
+        // Ligth
+        colorsCss.setAttribute('data-type','ligth');
+        colorsCss.setAttribute('href',app.url+'/css/colors.css');
+        colorsModeBtn.querySelector('ion-icon').setAttribute('name','moon-outline');
+    }
+});

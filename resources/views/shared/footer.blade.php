@@ -1,6 +1,8 @@
 {{-- VARIABLE SCRIPTS --}}
 <script>
-    let app_url = '{{ config('app.url') }}';
+    const app = {
+        url: '{{ config('app.url') }}'
+    };
 </script>
 
 @yield('script') {{-- SCRIPT DE PLUGINS --}}
