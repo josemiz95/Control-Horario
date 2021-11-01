@@ -1,5 +1,8 @@
 :root{
     /* Custom colors */
+    --white: #fafafa;
+    --black: #2a3042;
+
     --primary: #4596ff;
     --primary-hover: #2f88fc;
 
@@ -8,13 +11,30 @@
 
     --muted: #607d8b;
 
-    --white: #fff;
-    --black: #000;
+    --success: green;
+    --success-hover: green;
+
+    --danger: red;
+    --danger-hover: red;
+
+    --warning: yellow;
+    --warning-hover: yellow;
+    
+    --info: blue;
+    --info-hover: blue;
+
+    --light: #fff;
+    --light-hover: #fff;
+
+    --dark: #000;
+    --dark-hover: #000;
 
     --bg-color: #f8f7fd;
     --shadow: rgb(18 38 63 / 5%);
 
     /* Components */
-    /* --nav-color: #ff4949; */
+    --nav-bg-color: var(--primary);
+    --nav-color: var(--white);
+    --nav-active-color: #2785dd;
     /* --topbar-color: #ff4949; */
 }

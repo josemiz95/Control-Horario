@@ -1,5 +1,8 @@
 :root{
     /* Custom dark colors */
+    --white: #2a3042;
+    --black: #dddddd;
+
     --primary: #4596ff;
     --primary-hover: #4cacfa;
 
@@ -8,9 +11,12 @@
 
     --muted: #adadad;
 
-    --white: #24243e;
-    --black: #dddddd;
+    --bg-color: #222736;
+    --shadow: rgb(0 22 50 / 5%);
 
-    --bg-color: #221f3a;
-    --shadow: rgb(205 190 253 / 5%);
+    --nav-bg-color: #2785dd;
+    --nav-color: var(--black);
+    --nav-active-color: var(--black);
+    
+    /* --topbar-color: #ff4949; */
 }

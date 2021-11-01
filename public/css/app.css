@@ -1,6 +1,6 @@
 /****** General *******/
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; font-weight: 400;}
+*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
 body{ 
     background: var(--bg-color);
     min-height: 100vh;
@@ -12,9 +12,9 @@ body{
     width: 100%;
 }
 h1,h2,h3,h4 { font-weight: 500; }
-h1{ font-size: 1.5rem; }
-h2{ font-size: 1.23rem; }
-h3{ font-size: 1rem; }
+h1{ font-size: 1.75rem; }
+h2{ font-size: 1.5rem; }
+h3{ font-size: 1.2rem; }
 h4{ font-size: 1rem; }
 
 /****** Navigation *******/
@@ -22,7 +22,7 @@ h4{ font-size: 1rem; }
     position: fixed;
     width: 215px;
     height: 100%;
-    background-color: var(--nav-color, var(--primary));
+    background-color: var(--nav-bg-color, var(--primary));
     transition: 0.5s;
     overflow:hidden;
 }
@@ -68,11 +68,11 @@ h4{ font-size: 1rem; }
             display: block;
             text-decoration: none;
             display: flex;
-            color: var(--bg-color);
+            color: var(--nav-color);
             padding-left: 5px;
         }
         .navContainer ul li.active a{
-            color: var(--nav-color, var(--primary));
+            color: var(--nav-active-color, var(--black));
         }
         .navContainer ul li a .icon{
             position: relative;
@@ -216,11 +216,11 @@ h4{ font-size: 1rem; }
     display: -ms-flexbox;
     display: flex;
     font-weight: 500;
-    height: 30px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     width: 30px;
+    height: 30px;
 }
     .avatar-user.circle {
         border-radius: 50%!important;
@@ -238,16 +238,27 @@ h4{ font-size: 1rem; }
 }
 
 /****** App Basic Components ******/
-.card-box{
+.z-card{
     background-color: var(--white);
     box-shadow: 0 2px 8px var(--shadow), 0 0px 16px var(--shadow);
     border-radius: var(--border-radius);
+    color: var(--black);
+    margin-bottom: 24px;
 }
-
-    .card-box .card-header{
+    .z-card .z-card-header{
         padding: 15px 15px 0 15px;
     }
+    .z-card .z-card-body{
+        padding: 15px;
+    }
 
-    .card-box .card-body{
-        padding: 0 15px 15px 15px;
+    /* Card icon */
+    .z-card-body .z-card-icon{
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        --ionicon-stroke-width: 50px;
     }

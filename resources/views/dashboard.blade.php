@@ -64,23 +64,37 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-6">
-                        <div class="card-box">
-                            <div class="card-header">
-                                <h4>Titulo de Card</h4>
+                    <div class="col-2">
+                        <div class="z-card">
+                            <div class="z-card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h2>234</h2>
+                                        <p>Algo</p>
+                                    </div>
+                                    <div class="z-card-icon"><ion-icon name="moon-outline"></ion-icon></div>
+                                </div>
                             </div>
-                            <div class="card-body">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="z-card">
+                            <div class="z-card-header">
+                                <h3>Titulo de Card</h3>
+                            </div>
+                            <div class="z-card-body">
                                 {{-- Content card --}}
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-6">
-                        <div class="card-box">
-                            <div class="card-header">
-                                <h4>Titulo de Card</h4>
+                        <div class="z-card">
+                            <div class="z-card-header">
+                                <h3>Titulo de Card</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="z-card-body">
                                 {{-- Content card --}}
                             </div>
                         </div>
