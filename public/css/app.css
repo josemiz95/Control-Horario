@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 *{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
 body{ 
-    background: var(--white);
+    background: var(--bg-color);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -57,7 +57,7 @@ h3{ font-size: 1rem; }
             border-bottom-left-radius: 10px;
         }
         .navContainer ul li.active{
-            background: var(--white);
+            background: var(--bg-color);
         }
         .navContainer ul li a{
             position: relative;
@@ -66,7 +66,7 @@ h3{ font-size: 1rem; }
             display: block;
             text-decoration: none;
             display: flex;
-            color: var(--white);
+            color: var(--bg-color);
             padding-left: 5px;
         }
         .navContainer ul li.active a{
@@ -103,11 +103,11 @@ h3{ font-size: 1rem; }
         }
         .navContainer ul li.active a::before{
             top: -50px;
-            box-shadow: 30px 35px 0 10px var(--white);
+            box-shadow: 30px 35px 0 10px var(--bg-color);
         }
         .navContainer ul li.active a::after{
             bottom: -50px;
-            box-shadow: 50px -35px 0 10px var(--white);
+            box-shadow: 50px -35px 0 10px var(--bg-color);
         }
 
     /******* MENU COLLAPSED *******/
