@@ -1,6 +1,6 @@
 /****** General *******/
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; font-weight: 400;}
 body{ 
     background: var(--bg-color);
     min-height: 100vh;
@@ -11,9 +11,11 @@ body{
     position: relative;
     width: 100%;
 }
+h1,h2,h3,h4 { font-weight: 500; }
 h1{ font-size: 1.5rem; }
 h2{ font-size: 1.23rem; }
 h3{ font-size: 1rem; }
+h4{ font-size: 1rem; }
 
 /****** Navigation *******/
 .navContainer {
@@ -53,8 +55,8 @@ h3{ font-size: 1rem; }
             position: relative;
             width: 100%;
             list-style: none;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
+            border-top-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
         }
         .navContainer ul li.active{
             background: var(--bg-color);
@@ -98,7 +100,7 @@ h3{ font-size: 1rem; }
             right: 0;
             width: 50px;
             height: 50px;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             pointer-events: none;
         }
         .navContainer ul li.active a::before{
@@ -131,7 +133,7 @@ h3{ font-size: 1rem; }
     transition: 0.5s;
 }
 
-.appContainer .topbar{
+.topbar{
     width: 100%;
     height: 45px;
     display: flex;
@@ -141,12 +143,12 @@ h3{ font-size: 1rem; }
     background: var(--topbar-color, var(--white));
     box-shadow: 0 0.75rem 1.5rem var(--shadow);
 }
-    .appContainer .topbar div{
+    .topbar div{
         display: flex;
         align-items: center;
     }
 
-    .appContainer .topbar .toggle{
+    .topbar .toggle{
         position: relative;
         display: flex;
         justify-content: center;
@@ -157,39 +159,37 @@ h3{ font-size: 1rem; }
         transition: transform 0.5s;
         color: var(--primary);
     }
-    .appContainer .topbar .toggle:hover{
+    .topbar .toggle:hover{
         color: var(--primary-hover);
     }
-    .appContainer .topbar .breadcrumb ul{
+    .topbar .breadcrumb ul{
         padding: 10px 10px;
         list-style: none;
     }
-        .appContainer .topbar .breadcrumb ul li{
+        .topbar .breadcrumb ul li{
             display: inline;
             font-size: 0.8rem;
             color: var(--muted);
-            font-weight: 400;
         }
-        .appContainer .topbar .breadcrumb ul li:last-child{
+        .topbar .breadcrumb ul li:last-child{
             color: var(--black);
-            font-weight: 600;
+            font-weight: 500;
         }
-        .appContainer .topbar ul li+li:before {
+        .topbar ul li+li:before {
             padding: 0 8px;
             color: var(--black);
             content: ">";
             color: var(--muted);
-            font-weight: 400;
         }
-    .appContainer .topbar .user{
+    .topbar .user{
         cursor: pointer;
         padding: 0 5px;
     }
-    .appContainer .topbar .settings{
+    .topbar .settings{
         font-size: 1.4rem;
         color: var(--black);
     }
-        .appContainer .topbar .settings .option{
+        .topbar .settings .option{
             display: flex;
             justify-content: center;
             align-items: center;  
@@ -226,5 +226,28 @@ h3{ font-size: 1rem; }
         border-radius: 50%!important;
     }
     .avatar-user.square {
-        border-radius: 10px!important;
+        border-radius: var(--border-radius)!important;
+    }
+
+/****** App Content ******/
+.appContainer .content{
+    height: calc(100vh - 45px);
+    width: 100%;
+    padding: 25px;
+    overflow: auto;
+}
+
+/****** App Basic Components ******/
+.card-box{
+    background-color: var(--white);
+    box-shadow: 0 2px 8px var(--shadow), 0 0px 16px var(--shadow);
+    border-radius: var(--border-radius);
+}
+
+    .card-box .card-header{
+        padding: 15px 15px 0 15px;
+    }
+
+    .card-box .card-body{
+        padding: 0 15px 15px 15px;
     }

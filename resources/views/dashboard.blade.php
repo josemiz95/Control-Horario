@@ -58,6 +58,39 @@
                 
             </div>
         </div>
+
+        <div class="content">
+            {{-- CONTENT APP --}}
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="card-box">
+                            <div class="card-header">
+                                <h4>Titulo de Card</h4>
+                            </div>
+                            <div class="card-body">
+                                {{-- Content card --}}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6">
+                        <div class="card-box">
+                            <div class="card-header">
+                                <h4>Titulo de Card</h4>
+                            </div>
+                            <div class="card-body">
+                                {{-- Content card --}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+
+        </div>
     </div>
 @endsection
 
