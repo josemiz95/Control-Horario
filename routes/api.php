@@ -25,6 +25,8 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
     
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', [UsersController::class, 'list'])->name('api.users.list');
+        Route::post('/', [UsersController::class, 'create'])->name('api.users.create');
+        Route::put('/{id}', [UsersController::class, 'update'])->name('api.users.update');
     });
 });
 
