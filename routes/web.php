@@ -25,7 +25,7 @@ Route::get('/login', function () {
 /*El token de inicio de sesion se guardara en una cookie por lo cual se podra comprobar si existe la sesion y que usuario esta con la sesion iniciada
 para continuar con el uso de la aplicacion*/
 
-Route::group(['middleware'=>['auth']], function () {
+Route::group(['middleware'=>['authCookie']], function () {
     Route::get('/prueba', function () {
         dd(Auth::user());
     });
