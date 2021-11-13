@@ -15,11 +15,23 @@ class UsersController extends Controller
         return response($users, 200);
     }
 
+    public function get($id){
+        $user = User::find($id);
+
+        return response($user, 200);
+    }
+
     public function create(Request $request){
         $validation = Validator::make($request->all(),[
+            'role_id'=>'nullable|exists:roles,id',
             'name'=>'required|string',
             'email'=>'required|email|unique:users,email',
-            'password'=>'required|string'
+            'password'=>'required|string',
+            'nif'=>'nullable|string|max:15',
+            'leave_days'=>'nullable|numeric',
+            'status'=>'nullable|numeric|in:0,1',
+            'siglas'=>'nullable|string|max:3',
+            'color'=>'nullable|string|max:10',
         ]);
         
         if(!$validation->fails()){
@@ -36,27 +48,32 @@ class UsersController extends Controller
 
     public function update(Request $request, $id){
         $validation = Validator::make($request->all(),[
+            'role_id'=>'nullable|exists:roles,id',
             'name'=>'required|string',
             'email'=>'required|email|unique:users,email,'.$id,
             'password'=>'nullable|string',
-            'password_old'=>'required_with:password|string'
+            'password_old'=>'required_with:password|string',
+            'nif'=>'nullable|string|max:15',
+            'leave_days'=>'nullable|numeric',
+            'status'=>'nullable|numeric|in:0,1',
+            'siglas'=>'nullable|string|max:3',
+            'color'=>'nullable|string|max:10',
         ]);
         
         if(!$validation->fails()){
-            $data = $request->all();
+            $data = array_filter($request->all());
 
             $user = User::find($id);
             
-            if($data['password'] && !Hash::check($data['password_old'], $user->password)){
+            if(isset($data['password']) && isset($data['password_old']) && !Hash::check($data['password_old'], $user->password)){
                 return response(['status'=>false, 'errors'=>['password_old'=>'password is incorrect']], 403);
             }
-            
-            $user->email = $data['email'];
-            $user->name = $data['name'];
-            if($data['password']){
-                $user->password = Hash::make($data['password']);
+
+            if(isset($data['password'])){
+                $data['password'] = Hash::make($data['password']);
             }
 
+            $user->fill($data);
             $user->save();
 
             return response($user, 201);

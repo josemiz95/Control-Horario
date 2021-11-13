@@ -22,9 +22,19 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('role_id')->nullable();
+
             $table->string('name');
+            $table->string('surname')->nullable();
             $table->string('email')->unique();
             $table->string('password');
+
+            $table->string('nif',15)->nullable();
+            $table->integer('leave_days')->nullable();
+            $table->boolean('status')->default(0);
+            $table->text('observations')->nullable();
+            $table->string('siglas',5)->default('AAA');
+            $table->string('color',10)->default('#3e6eff');
+
             $table->rememberToken();
             $table->timestamps();
 
