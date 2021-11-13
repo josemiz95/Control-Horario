@@ -24,7 +24,7 @@ class Checkio extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
-        Schema::create('checks_io', function (Blueprint $table) {
+        Schema::create('time_checks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('slot_id');
             $table->string('type'); // In / Out
