@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Checkio extends Migration
+class TimeChecks extends Migration
 {
     /**
      * Run the migrations.
@@ -32,6 +32,8 @@ class Checkio extends Migration
             $table->text('coment');
             $table->boolean('changed')->default(0);
             $table->unsignedBigInteger('changed_by')->nullable();
+
+            $table->timestamps();
 
             $table->foreign('slot_id')->references('id')->on('time_slots')->onDelete('cascade');
             $table->foreign('changed_by')->references('id')->on('users')->onDelete('set null');
