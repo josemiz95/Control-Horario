@@ -38,4 +38,8 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo(Role::class, 'role_id',);
     }
+
+    public function timeSlots(){
+        return $this->hasMany(TimeSlot::class, 'user_id');
+    }
 }

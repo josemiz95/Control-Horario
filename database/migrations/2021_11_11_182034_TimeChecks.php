@@ -18,6 +18,8 @@ class TimeChecks extends Migration
             $table->unsignedBigInteger('user_id');
             $table->date('date');
             $table->time('total_time');
+
+            $table->boolean('created')->default(0);
             
             $table->timestamps();
 
@@ -29,7 +31,7 @@ class TimeChecks extends Migration
             $table->unsignedBigInteger('slot_id');
             $table->string('type'); // In / Out
             $table->dateTime('check_time');
-            $table->text('coment');
+            $table->text('comment')->nullable();
             $table->boolean('changed')->default(0);
             $table->unsignedBigInteger('changed_by')->nullable();
 

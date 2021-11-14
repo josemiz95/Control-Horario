@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ChecksController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,17 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
         Route::get('/{id}', [UsersController::class, 'get'])->name('api.users.get');
         Route::post('/', [UsersController::class, 'create'])->name('api.users.create');
         Route::put('/{id}', [UsersController::class, 'update'])->name('api.users.update');
+    });
+
+    Route::group(['prefix' => 'check'], function () {
+        Route::get('/{action}', [ChecksController::class, 'check'])->name('api.check.check');
+    });
+
+    Route::group(['prefix' => 'checks'], function () {
+        Route::get('/', [ChecksController::class, 'list'])->name('api.checks.list');
+        Route::get('/{id}', [ChecksController::class, 'get'])->name('api.checks.get');
+        Route::post('/', [ChecksController::class, 'create'])->name('api.checks.create');
+        Route::put('/{id}', [ChecksController::class, 'update'])->name('api.checks.update');
     });
 });
 
