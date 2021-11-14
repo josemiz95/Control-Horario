@@ -14,6 +14,7 @@ class ChecksController extends Controller
             $user = Auth::user();
             $slotToday = $user->timeSlots()->where('date','=', date('Y-m-d'))
                                             ->where('created','0')
+                                            ->has('timeChecks', '<', 2)
                                             ->orderBy('id','desc')->first();
 
             if($slotToday){
