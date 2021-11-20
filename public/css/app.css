@@ -17,6 +17,73 @@ h2{ font-size: 1.5rem; }
 h3{ font-size: 1.2rem; }
 h4{ font-size: 1rem; }
 
+/****** Coloring *******/
+.z-primary{
+    background-color: var(--primary)!important;
+    border-color: var(--primary)!important;
+    color: var(--white)!important;
+}
+.z-primary.hover:hover{
+    background-color: var(--primary-hover)!important;
+    border-color: var(--primary-hover)!important;
+    color: var(--white)!important;
+}
+
+.z-secondary{
+    background-color: var(--secondary)!important;
+    border-color: var(--secondary)!important;
+    color: var(--white)!important;
+}
+.z-secondary.hover:hover{
+    background-color: var(--secondary-hover)!important;
+    border-color: var(--secondary-hover)!important;
+    color: var(--white)!important;
+}
+
+.z-success{
+    background-color: var(--success)!important;
+    border-color: var(--success)!important;
+    color: var(--white)!important;
+}
+.z-success.hover:hover{
+    background-color: var(--success-hover)!important;
+    border-color: var(--success-hover)!important;
+    color: var(--white)!important;
+}
+
+.z-warning{
+    background-color: var(--warning)!important;
+    border-color: var(--warning)!important;
+    color: var(--black)!important;
+}
+.z-warning.hover:hover{
+    background-color: var(--warning-hover)!important;
+    border-color: var(--warning-hover)!important;
+    color: var(--black)!important;
+}
+
+.z-danger{
+    background-color: var(--danger)!important;
+    border-color: var(--danger)!important;
+    color: var(--white);
+}
+.z-danger.hover:hover{
+    background-color: var(--danger-hover)!important;
+    border-color: var(--danger-hover)!important;
+    color: var(--white);
+}
+
+.z-info{
+    background-color: var(--info)!important;
+    border-color: var(--info)!important;
+    color: var(--white)!important;
+}
+.z-info.hover:hover{
+    background-color: var(--info-hover)!important;
+    border-color: var(--info-hover)!important;
+    color: var(--white)!important;
+}
+
 /****** Navigation *******/
 .navContainer {
     position: fixed;
@@ -187,7 +254,7 @@ h4{ font-size: 1rem; }
     }
     .topbar .settings{
         font-size: 1.4rem;
-        color: var(--black);
+        color: var(--dark);
     }
         .topbar .settings .option{
             display: flex;
@@ -240,10 +307,10 @@ h4{ font-size: 1rem; }
 /****** App Basic Components ******/
 /** Card **/
 .z-card{
-    background-color: var(--white);
+    background-color: var(--light);
     box-shadow: 0 2px 8px var(--shadow), 0 0px 16px var(--shadow);
     border-radius: var(--border-radius);
-    color: var(--black);
+    color: var(--dark);
     margin-bottom: 24px;
 }
     .z-card .z-card-header{
@@ -281,11 +348,11 @@ h4{ font-size: 1rem; }
     }
     .z-table thead tr th{
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 600;
         letter-spacing: .2px;
         white-space: nowrap;
         color: var(--table-thead-text-color);
-        padding: 0.75rem;
+        padding: 0.25rem;
     }
     .z-table tbody.text-center{
         text-align: center;
@@ -298,7 +365,7 @@ h4{ font-size: 1rem; }
     .z-table tbody tr td{
         border-bottom: 2px solid var(--table-thead-bg-color);
         vertical-align: middle;
-        padding: 10px 15px;
+        padding: 0.25rem;
     }
     .z-table tbody tr:last-child td{
         border-bottom: 0;
@@ -314,17 +381,16 @@ h4{ font-size: 1rem; }
     /* General inputs */
     .z-form-group label{
         display: inline-block;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
         width: 100%;
     }
     .z-form-group input, .z-form-group select, .z-form-group textarea{
         display: block;
         width: 100%;
-        padding: 0.5rem 0.5rem;
+        padding: 0.25rem 0.5rem;
         background: transparent;
         border: 1px solid var(--input-border);
-        font-size: 14px;
-        color: var(--black);
+        color: var(--dark);
         border-radius: var(--border-radius);
     }
     .z-form-group input[type=number]::-webkit-inner-spin-button,
@@ -336,7 +402,7 @@ h4{ font-size: 1rem; }
         resize: vertical;
     }
     .z-form-group input:focus, .z-form-group select:focus, .z-form-group textarea:focus{
-        color: var(--black);
+        color: var(--dark);
         border-color: var(--input-focused);
         box-shadow: none;
         outline: none;
@@ -344,15 +410,14 @@ h4{ font-size: 1rem; }
     /* Checkbox */
     .z-form-group .z-check {
         position: relative;
-        padding-left: 35px;
+        padding-left: 25px;
         margin-bottom: 12px;
         margin: 0 5px;
-        cursor: pointer;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        width: auto;
+        width: fit-content;
       }
       .z-form-group .z-check label {
           margin: 0;
@@ -366,10 +431,10 @@ h4{ font-size: 1rem; }
       }
       .z-form-group .z-check input ~ span{
         position: absolute;
-        top: 0;
+        top: 2px;
         left: 0;
-        height: 25px;
-        width: 25px;
+        height: 20px;
+        width: 20px;
         background-color: var(--input-secondary);
       }
       .z-form-group .z-check input[type=radio] ~ span{
@@ -384,6 +449,9 @@ h4{ font-size: 1rem; }
       .z-form-group .z-check input:checked ~ span {
         background-color: var(--primary);
       }
+      .z-form-group .z-check input:disabled ~ span {
+        background-color: var(--muted);
+      }
       .z-form-group .z-check span:after {
         content: "";
         position: absolute;
@@ -393,11 +461,11 @@ h4{ font-size: 1rem; }
         display: block;
       }
       .z-form-group .z-check input[type=checkbox]:checked ~ span:after {
-        left: 9px;
-        top: 5px;
+        left: 6px;
+        top: 2px;
         width: 5px;
         height: 10px;
-        border: solid var(--white);
+        border: solid var(--light);
         border-width: 0 3px 3px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -406,8 +474,26 @@ h4{ font-size: 1rem; }
       .z-form-group .z-check input[type=radio]:checked ~ span:after {
         top: 5px;
         left: 5px;
-        height: 15px;
-        width: 15px;
+        height: 10px;
+        width: 10px;
         border-radius: 50%;
-        background: var(--white);
+        background: var(--light);
       }
+
+/** Button **/
+.z-button{
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 0;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+}

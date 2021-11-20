@@ -1,57 +1,55 @@
 :root{
     /* Custom colors */
-        --white: #fafafa;
-        --black: #2a3042;
+    --white: #fafafa;
+    --black: #2a3042;
 
-        --primary: #4596ff;
-        --primary-hover: #2f88fc;
+    --primary: #4596ff;
+    --primary-hover: #2f88fc;
 
-        --secondary: #a3b9c4;
-        --secondary-hover: #77919e;
+    --secondary: #FF7A29;
+    --secondary-hover: #FF7A29;
 
-        --muted: #607d8b;
+    --muted: #607d8b;
 
-        --success: green;
-        --success-hover: green;
+    --success: green;
+    --success-hover: green;
 
-        --danger: red;
-        --danger-hover: red;
+    --danger: #dc3545;
+    --danger-hover: #dc3545;
 
-        --warning: yellow;
-        --warning-hover: yellow;
-        
-        --info: blue;
-        --info-hover: blue;
+    --warning: #ffc107;
+    --warning-hover: #ffc107;
+    
+    --info: #17a2b8;
+    --info-hover: #17a2b8;
 
-        --light: #fff;
-        --light-hover: #fff;
+    --light: #f8f9fa;
+    --light-hover: #f8f9fa;
 
-        --dark: #000;
-        --dark-hover: #000;
+    --dark: #343a40;
+    --dark-hover: #343a40;
 
-        --bg-color: #f8f7fd;
-        --shadow: rgb(18 38 63 / 5%);
+    --bg-color: #f8f7fd;
+    --shadow: rgb(18 38 63 / 5%);
 
     /* Components */
         /** Navigation **/
         --nav-bg-color: var(--primary);
-        --nav-text-color: var(--white);
+        --nav-text-color: var(--light);
         --nav-active-text-color: var(--nav-bg-color);
-        --topbar-color: var(--white);
-        --topbar-text-color: var(--black);
+        --topbar-color: var(--light);
+        --topbar-text-color: var(--dark);
         --topbar-text-muted: var(--muted);
 
         /** Table **/
         --table-thead-bg-color: var(--primary);
-        --table-thead-text-color: var(--white);
-        --table-tbody-bg-color: var(--white);
-        --table-tbody-text-color: var(--black);
+        --table-thead-text-color: var(--light);
+        --table-tbody-bg-color: var(--light);
+        --table-tbody-text-color: var(--dark);
 
         /** forms **/
         --input-border: #d7dbda;
         --input-focused: var(--primary);
         --input-secondary: #dfdfdf;
         --input-hover: #c7c7c7;
-
-
 }

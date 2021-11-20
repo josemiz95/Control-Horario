@@ -140,6 +140,11 @@
                                             <input type="checkbox" checked="checked" id="checkbox">
                                             <span></span>
                                         </label>
+                                        <label class="z-check">
+                                            <label for="checkbox1">One1</label>
+                                            <input type="checkbox" checked="checked" id="checkbox1" disabled>
+                                            <span></span>
+                                        </label>
                                     </div>
                                     <div class="z-form-group col-6">
                                         <label for="">radio</label>
@@ -150,13 +155,21 @@
                                         </label>
                                         <label class="z-check">
                                             <label for="radio2">One</label>
-                                            <input type="radio" name="radio" id="radio2" checked="checked">
+                                            <input type="radio" name="radio" id="radio2" checked="checked" disabled>
                                             <span></span>
                                         </label>
                                     </div>
                                     <div class="z-form-group col-12">
                                         <label for="">textarea</label>
                                         <textarea name="" id="" cols="30" rows="5"></textarea>
+                                    </div>
+                                    <div class="col12">
+                                        <button class="z-button z-primary hover">Boton</button>
+                                        <button class="z-button z-secondary hover">Boton</button>
+                                        <button class="z-button z-success hover">Boton</button>
+                                        <button class="z-button z-danger hover">Boton</button>
+                                        <button class="z-button z-warning hover">Boton</button>
+                                        <button class="z-button z-info hover">Boton</button>
                                     </div>
                                 </div>
                             </div>
