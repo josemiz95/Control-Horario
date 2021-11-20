@@ -311,9 +311,11 @@ h4{ font-size: 1rem; }
 .z-form-group{
     margin-bottom: 1rem;
 }
+    /* General inputs */
     .z-form-group label{
         display: inline-block;
         margin-bottom: 0.5rem;
+        width: 100%;
     }
     .z-form-group input, .z-form-group select, .z-form-group textarea{
         display: block;
@@ -339,3 +341,73 @@ h4{ font-size: 1rem; }
         box-shadow: none;
         outline: none;
     }
+    /* Checkbox */
+    .z-form-group .z-check {
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        margin: 0 5px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: auto;
+      }
+      .z-form-group .z-check label {
+          margin: 0;
+      }
+      .z-form-group .z-check input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .z-form-group .z-check input ~ span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: var(--input-secondary);
+      }
+      .z-form-group .z-check input[type=radio] ~ span{
+        border-radius: 50%;
+      }
+      .z-form-group .z-check input[type=checkbox] ~ span{
+        border-radius: var(--border-radius);
+      }
+      .z-form-group .z-check:hover input ~ span {
+        background-color: var(--input-hover);
+      }
+      .z-form-group .z-check input:checked ~ span {
+        background-color: var(--primary);
+      }
+      .z-form-group .z-check span:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      .z-form-group .z-check input:checked ~ span:after {
+        display: block;
+      }
+      .z-form-group .z-check input[type=checkbox]:checked ~ span:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid var(--white);
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      .z-form-group .z-check input[type=radio]:checked ~ span:after {
+        top: 5px;
+        left: 5px;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: var(--white);
+      }

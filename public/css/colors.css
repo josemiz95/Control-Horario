@@ -50,6 +50,8 @@
         /** forms **/
         --input-border: #d7dbda;
         --input-focused: var(--primary);
+        --input-secondary: #dfdfdf;
+        --input-hover: #c7c7c7;
 
 
 }

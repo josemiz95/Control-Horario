@@ -133,6 +133,27 @@
                                         <label for="">number</label>
                                         <input type="number">
                                     </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">checkbox</label>
+                                        <label class="z-check">
+                                            <label for="checkbox">One</label>
+                                            <input type="checkbox" checked="checked" id="checkbox">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">radio</label>
+                                        <label class="z-check">
+                                            <label for="radio1">One</label>
+                                            <input type="radio" name="radio" id="radio1" checked="checked">
+                                            <span></span>
+                                        </label>
+                                        <label class="z-check">
+                                            <label for="radio2">One</label>
+                                            <input type="radio" name="radio" id="radio2" checked="checked">
+                                            <span></span>
+                                        </label>
+                                    </div>
                                     <div class="z-form-group col-12">
                                         <label for="">textarea</label>
                                         <textarea name="" id="" cols="30" rows="5"></textarea>
