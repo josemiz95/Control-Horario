@@ -1,40 +1,55 @@
 :root{
     /* Custom colors */
-    --white: #fafafa;
-    --black: #2a3042;
+        --white: #fafafa;
+        --black: #2a3042;
 
-    --primary: #4596ff;
-    --primary-hover: #2f88fc;
+        --primary: #4596ff;
+        --primary-hover: #2f88fc;
 
-    --secondary: #a3b9c4;
-    --secondary-hover: #77919e;
+        --secondary: #a3b9c4;
+        --secondary-hover: #77919e;
 
-    --muted: #607d8b;
+        --muted: #607d8b;
 
-    --success: green;
-    --success-hover: green;
+        --success: green;
+        --success-hover: green;
 
-    --danger: red;
-    --danger-hover: red;
+        --danger: red;
+        --danger-hover: red;
 
-    --warning: yellow;
-    --warning-hover: yellow;
-    
-    --info: blue;
-    --info-hover: blue;
+        --warning: yellow;
+        --warning-hover: yellow;
+        
+        --info: blue;
+        --info-hover: blue;
 
-    --light: #fff;
-    --light-hover: #fff;
+        --light: #fff;
+        --light-hover: #fff;
 
-    --dark: #000;
-    --dark-hover: #000;
+        --dark: #000;
+        --dark-hover: #000;
 
-    --bg-color: #f8f7fd;
-    --shadow: rgb(18 38 63 / 5%);
+        --bg-color: #f8f7fd;
+        --shadow: rgb(18 38 63 / 5%);
 
     /* Components */
-    --nav-bg-color: var(--primary);
-    --nav-color: var(--white);
-    --nav-active-color: #2785dd;
-    /* --topbar-color: #ff4949; */
+        /** Navigation **/
+        --nav-bg-color: var(--primary);
+        --nav-text-color: var(--white);
+        --nav-active-text-color: var(--nav-bg-color);
+        --topbar-color: var(--white);
+        --topbar-text-color: var(--black);
+        --topbar-text-muted: var(--muted);
+
+        /** Table **/
+        --table-thead-bg-color: var(--primary);
+        --table-thead-text-color: var(--white);
+        --table-tbody-bg-color: var(--white);
+        --table-tbody-text-color: var(--black);
+
+        /** forms **/
+        --input-border: #d7dbda;
+        --input-focused: var(--primary);
+
+
 }

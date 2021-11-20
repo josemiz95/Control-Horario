@@ -22,7 +22,7 @@ h4{ font-size: 1rem; }
     position: fixed;
     width: 215px;
     height: 100%;
-    background-color: var(--nav-bg-color, var(--primary));
+    background-color: var(--nav-bg-color);
     transition: 0.5s;
     overflow:hidden;
 }
@@ -68,11 +68,11 @@ h4{ font-size: 1rem; }
             display: block;
             text-decoration: none;
             display: flex;
-            color: var(--nav-color);
+            color: var(--nav-text-color);
             padding-left: 5px;
         }
         .navContainer ul li.active a{
-            color: var(--nav-active-color, var(--black));
+            color: var(--nav-active-text-color);
         }
         .navContainer ul li a .icon{
             position: relative;
@@ -140,7 +140,8 @@ h4{ font-size: 1rem; }
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
-    background: var(--topbar-color, var(--white));
+    background: var(--topbar-color);
+    color: var(--topbar-text-color);
     box-shadow: 0 0.75rem 1.5rem var(--shadow);
 }
     .topbar div{
@@ -169,17 +170,16 @@ h4{ font-size: 1rem; }
         .topbar .breadcrumb ul li{
             display: inline;
             font-size: 0.8rem;
-            color: var(--muted);
+            color: var(--topbar-text-muted);
         }
         .topbar .breadcrumb ul li:last-child{
-            color: var(--black);
+            color: var(--topbar-text-color);
             font-weight: 500;
         }
         .topbar ul li+li:before {
             padding: 0 8px;
-            color: var(--black);
             content: ">";
-            color: var(--muted);
+            color: var(--topbar-text-muted);
         }
     .topbar .user{
         cursor: pointer;
@@ -238,6 +238,7 @@ h4{ font-size: 1rem; }
 }
 
 /****** App Basic Components ******/
+/** Card **/
 .z-card{
     background-color: var(--white);
     box-shadow: 0 2px 8px var(--shadow), 0 0px 16px var(--shadow);
@@ -261,4 +262,80 @@ h4{ font-size: 1rem; }
         align-items: center;
         font-size: 22px;
         --ionicon-stroke-width: 50px;
+    }
+
+/** Table **/
+.z-table{
+    background-color: var(--table-tbody-bg-color);
+    color: var(--table-tbody-text-color);
+    border: 2px solid var(--table-thead-bg-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+    .z-table thead tr{
+        background: var(--table-thead-bg-color);
+    }
+    .z-table thead tr th{
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: .2px;
+        white-space: nowrap;
+        color: var(--table-thead-text-color);
+        padding: 0.75rem;
+    }
+    .z-table tbody.text-center{
+        text-align: center;
+    }
+    .z-table tbody tr{
+        width: 100%;
+        margin: 0 auto;
+        clear: both;
+    }
+    .z-table tbody tr td{
+        border-bottom: 2px solid var(--table-thead-bg-color);
+        vertical-align: middle;
+        padding: 10px 15px;
+    }
+    .z-table tbody tr:last-child td{
+        border-bottom: 0;
+    }
+    .z-table tbody tr td.text-center{
+        text-align: center;
+    }
+
+/** Form **/
+.z-form-group{
+    margin-bottom: 1rem;
+}
+    .z-form-group label{
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+    .z-form-group input, .z-form-group select, .z-form-group textarea{
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+        background: transparent;
+        border: 1px solid var(--input-border);
+        font-size: 14px;
+        color: var(--black);
+        border-radius: var(--border-radius);
+    }
+    .z-form-group input[type=number]::-webkit-inner-spin-button,
+    .z-form-group input[type=number]::-webkit-outer-spin-button{
+        -webkit-appearance: none; 
+        margin: 0;
+    }
+    .z-form-group textarea{
+        resize: vertical;
+    }
+    .z-form-group input:focus, .z-form-group select:focus, .z-form-group textarea:focus{
+        color: var(--black);
+        border-color: var(--input-focused);
+        box-shadow: none;
+        outline: none;
     }

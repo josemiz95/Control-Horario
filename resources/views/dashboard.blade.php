@@ -84,7 +84,26 @@
                                 <h3>Titulo de Card</h3>
                             </div>
                             <div class="z-card-body">
-                                {{-- Content card --}}
+                                <table class="z-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Fecha</th>
+                                            <th>Dato 1</th>
+                                            <th>Dato 2</th>
+                                            <th>action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -95,7 +114,30 @@
                                 <h3>Titulo de Card</h3>
                             </div>
                             <div class="z-card-body">
-                                {{-- Content card --}}
+                                <div class="row">
+                                    <div class="z-form-group col-6">
+                                        <label for="">Text</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">Select</label>
+                                        <select name="" id="">
+                                            <option value="Opcion">opcion</option>
+                                        </select>
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">date</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">number</label>
+                                        <input type="number">
+                                    </div>
+                                    <div class="z-form-group col-12">
+                                        <label for="">textarea</label>
+                                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

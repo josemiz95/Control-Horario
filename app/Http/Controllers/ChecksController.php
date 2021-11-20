@@ -21,7 +21,7 @@ class ChecksController extends Controller
                 $lastCheck = $slotToday->timeChecks()->orderBy('check_time','desc')->first();
 
                 if($lastCheck->type == $action){
-                    return response(['message'=>'action not allowed'], 400);
+                    return response(['message'=>'Action not allowed'], 400);
                 }
 
                 $check = $slotToday->createCheck($action);
@@ -40,6 +40,6 @@ class ChecksController extends Controller
             }
         }
 
-        return response(['message'=>'action not allowed'], 400);
+        return response(['message'=>'Action not allowed'], 400);
     }
 }
