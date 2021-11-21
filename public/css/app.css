@@ -7,6 +7,20 @@
   font-family: "Poppins", sans-serif;
 }
 
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cecece;
+  border-radius: 8px;
+}
+
 body {
   background: var(--bg-color);
   min-height: 100vh;
@@ -38,77 +52,81 @@ h4 {
   font-size: 1rem;
 }
 
+*:disabled {
+  opacity: 0.7 !important;
+}
+
 /****** Coloring *******/
 .z-primary {
-  background-color: var(--primary) !important;
-  border-color: var(--primary) !important;
-  color: var(--white) !important;
-}
-
-.z-primary.hover:hover {
-  background-color: var(--primary-hover) !important;
-  border-color: var(--primary-hover) !important;
-  color: var(--white) !important;
-}
-
-.z-secondary {
-  background-color: var(--secondary) !important;
-  border-color: var(--secondary) !important;
-  color: var(--white) !important;
-}
-
-.z-secondary.hover:hover {
-  background-color: var(--secondary-hover) !important;
-  border-color: var(--secondary-hover) !important;
-  color: var(--white) !important;
-}
-
-.z-success {
-  background-color: var(--success) !important;
-  border-color: var(--success) !important;
-  color: var(--white) !important;
-}
-
-.z-success.hover:hover {
-  background-color: var(--success-hover) !important;
-  border-color: var(--success-hover) !important;
-  color: var(--white) !important;
-}
-
-.z-warning {
-  background-color: var(--warning) !important;
-  border-color: var(--warning) !important;
-  color: var(--black) !important;
-}
-
-.z-warning.hover:hover {
-  background-color: var(--warning-hover) !important;
-  border-color: var(--warning-hover) !important;
-  color: var(--black) !important;
-}
-
-.z-danger {
-  background-color: var(--danger) !important;
-  border-color: var(--danger) !important;
+  background-color: var(--primary);
+  border-color: var(--primary);
   color: var(--white);
 }
 
-.z-danger.hover:hover {
-  background-color: var(--danger-hover) !important;
-  border-color: var(--danger-hover) !important;
+.z-primary.hover:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: var(--white);
+}
+
+.z-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--white);
+}
+
+.z-secondary.hover:hover:not(:disabled) {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+  color: var(--white);
+}
+
+.z-success {
+  background-color: var(--success);
+  border-color: var(--success);
+  color: var(--white);
+}
+
+.z-success.hover:hover:not(:disabled) {
+  background-color: var(--success-hover);
+  border-color: var(--success-hover);
+  color: var(--white);
+}
+
+.z-warning {
+  background-color: var(--warning);
+  border-color: var(--warning);
+  color: var(--black);
+}
+
+.z-warning.hover:hover:not(:disabled) {
+  background-color: var(--warning-hover);
+  border-color: var(--warning-hover);
+  color: var(--black);
+}
+
+.z-danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: var(--white);
+}
+
+.z-danger.hover:hover:not(:disabled) {
+  background-color: var(--danger-hover);
+  border-color: var(--danger-hover);
   color: var(--white);
 }
 
 .z-info {
-  background-color: var(--info) !important;
-  border-color: var(--info) !important;
-  color: var(--white) !important;
+  background-color: var(--info);
+  border-color: var(--info);
+  color: var(--white);
 }
 
-.z-info.hover:hover {
-  background-color: var(--info-hover) !important;
-  border-color: var(--info-hover) !important;
-  color: var(--white) !important;
+.z-info.hover:hover:not(:disabled) {
+  background-color: var(--info-hover);
+  border-color: var(--info-hover);
+  color: var(--white);
 }
 
 /****** Components *******/
@@ -127,7 +145,7 @@ h4 {
 }
 
 .avatar-user.square {
-  border-radius: var(--border-radius) !important;
+  border-radius: 8px !important;
 }
 
 .z-button {
@@ -145,13 +163,13 @@ h4 {
   border: 0;
   padding: 0.25rem 0.5rem;
   font-size: 1rem;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
 }
 
 .z-card {
   background-color: var(--light);
   box-shadow: 0 2px 8px var(--shadow), 0 0px 16px var(--shadow);
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   color: var(--dark);
   margin-bottom: 24px;
 }
@@ -160,8 +178,16 @@ h4 {
   padding: 15px 15px 0 15px;
 }
 
+.z-card .z-card-header * {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .z-card .z-card-body {
   padding: 15px;
+  overflow: auto;
 }
 
 /* Card icon */
@@ -294,7 +320,7 @@ h4 {
   background: transparent;
   border: 1px solid var(--input-border);
   color: var(--dark);
-  border-radius: var(--border-radius);
+  border-radius: 8px;
 }
 
 .z-form-group input[type=number]::-webkit-inner-spin-button,
@@ -312,6 +338,12 @@ h4 {
   border-color: var(--input-focused);
   box-shadow: none;
   outline: none;
+}
+
+.z-form-group input:disabled, .z-form-group textarea:disabled, .z-form-group select:disabled, .z-form-group select:disabled option {
+  background-color: var(--disabled);
+  color: var(--dark);
+  opacity: 0.7;
 }
 
 /* Checkbox */
@@ -355,7 +387,7 @@ h4 {
 }
 
 .z-form-group .z-check input[type=checkbox] ~ span {
-  border-radius: var(--border-radius);
+  border-radius: 8px;
 }
 
 .z-form-group .z-check:hover input ~ span {
@@ -367,7 +399,8 @@ h4 {
 }
 
 .z-form-group .z-check input:disabled ~ span {
-  background-color: var(--muted);
+  background-color: var(--disabled);
+  opacity: 0.7;
 }
 
 .z-form-group .z-check span:after {
@@ -440,8 +473,8 @@ h4 {
   position: relative;
   width: 100%;
   list-style: none;
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .navContainer ul li.active {
@@ -491,7 +524,7 @@ h4 {
   right: 0;
   width: 50px;
   height: 50px;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   pointer-events: none;
 }
 
@@ -543,12 +576,12 @@ h4 {
 
 .z-table thead tr:last-child th:first-child {
   border: 2px solid var(--table-thead-bg-color);
-  border-top-left-radius: var(--border-radius);
+  border-top-left-radius: 8px;
 }
 
 .z-table thead tr:last-child th:last-child {
   border: 2px solid var(--table-thead-bg-color);
-  border-top-right-radius: var(--border-radius);
+  border-top-right-radius: 8px;
 }
 
 .z-table tbody tr td:first-child {
@@ -561,12 +594,12 @@ h4 {
 
 .z-table tbody tr:last-child td:first-child {
   border-left: 2px solid var(--table-thead-bg-color);
-  border-bottom-left-radius: var(--border-radius);
+  border-bottom-left-radius: 8px;
 }
 
 .z-table tbody tr:last-child td:last-child {
   border-right: 2px solid var(--table-thead-bg-color);
-  border-bottom-right-radius: var(--border-radius);
+  border-bottom-right-radius: 8px;
 }
 
 .z-table tbody tr:last-child td {

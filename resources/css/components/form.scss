@@ -15,7 +15,7 @@
         background: transparent;
         border: 1px solid var(--input-border);
         color: var(--dark);
-        border-radius: var(--border-radius);
+        border-radius: $border_radius;
     }
     .z-form-group input[type=number]::-webkit-inner-spin-button,
     .z-form-group input[type=number]::-webkit-outer-spin-button{
@@ -30,6 +30,12 @@
         border-color: var(--input-focused);
         box-shadow: none;
         outline: none;
+    }
+    
+    .z-form-group input:disabled, .z-form-group textarea:disabled, .z-form-group select:disabled, .z-form-group select:disabled option{
+      background-color: var(--disabled);
+      color: var(--dark);
+      opacity: 0.7;
     }
     /* Checkbox */
     .z-form-group .z-check {
@@ -65,7 +71,7 @@
         border-radius: 50%;
       }
       .z-form-group .z-check input[type=checkbox] ~ span{
-        border-radius: var(--border-radius);
+        border-radius: $border_radius;
       }
       .z-form-group .z-check:hover input ~ span {
         background-color: var(--input-hover);
@@ -74,7 +80,8 @@
         background-color: var(--primary);
       }
       .z-form-group .z-check input:disabled ~ span {
-        background-color: var(--muted);
+        background-color: var(--disabled);
+        opacity: 0.7;
       }
       .z-form-group .z-check span:after {
         content: "";

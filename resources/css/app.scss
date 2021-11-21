@@ -1,6 +1,22 @@
+$border_radius: 8px;
+
 /****** General *******/
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 *{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #cecece;
+    border-radius: $border_radius;
+}
+
 body{ 
     background: var(--bg-color);
     min-height: 100vh;
@@ -11,77 +27,82 @@ body{
     position: relative;
     width: 100%;
 }
+
 h1,h2,h3,h4 { font-weight: 500; }
 h1{ font-size: 1.75rem; }
 h2{ font-size: 1.5rem; }
 h3{ font-size: 1.2rem; }
 h4{ font-size: 1rem; }
 
+*:disabled{
+    opacity: 0.7!important;
+}
+
 /****** Coloring *******/
 .z-primary{
-    background-color: var(--primary)!important;
-    border-color: var(--primary)!important;
-    color: var(--white)!important;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
 }
-.z-primary.hover:hover{
-    background-color: var(--primary-hover)!important;
-    border-color: var(--primary-hover)!important;
-    color: var(--white)!important;
+.z-primary.hover:hover:not(:disabled){
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--white);
 }
 
 .z-secondary{
-    background-color: var(--secondary)!important;
-    border-color: var(--secondary)!important;
-    color: var(--white)!important;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
 }
-.z-secondary.hover:hover{
-    background-color: var(--secondary-hover)!important;
-    border-color: var(--secondary-hover)!important;
-    color: var(--white)!important;
+.z-secondary.hover:hover:not(:disabled){
+    background-color: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+    color: var(--white);
 }
 
 .z-success{
-    background-color: var(--success)!important;
-    border-color: var(--success)!important;
-    color: var(--white)!important;
+    background-color: var(--success);
+    border-color: var(--success);
+    color: var(--white);
 }
-.z-success.hover:hover{
-    background-color: var(--success-hover)!important;
-    border-color: var(--success-hover)!important;
-    color: var(--white)!important;
+.z-success.hover:hover:not(:disabled){
+    background-color: var(--success-hover);
+    border-color: var(--success-hover);
+    color: var(--white);
 }
 
 .z-warning{
-    background-color: var(--warning)!important;
-    border-color: var(--warning)!important;
-    color: var(--black)!important;
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color: var(--black);
 }
-.z-warning.hover:hover{
-    background-color: var(--warning-hover)!important;
-    border-color: var(--warning-hover)!important;
-    color: var(--black)!important;
+.z-warning.hover:hover:not(:disabled){
+    background-color: var(--warning-hover);
+    border-color: var(--warning-hover);
+    color: var(--black);
 }
 
 .z-danger{
-    background-color: var(--danger)!important;
-    border-color: var(--danger)!important;
+    background-color: var(--danger);
+    border-color: var(--danger);
     color: var(--white);
 }
-.z-danger.hover:hover{
-    background-color: var(--danger-hover)!important;
-    border-color: var(--danger-hover)!important;
+.z-danger.hover:hover:not(:disabled){
+    background-color: var(--danger-hover);
+    border-color: var(--danger-hover);
     color: var(--white);
 }
 
 .z-info{
-    background-color: var(--info)!important;
-    border-color: var(--info)!important;
-    color: var(--white)!important;
+    background-color: var(--info);
+    border-color: var(--info);
+    color: var(--white);
 }
-.z-info.hover:hover{
-    background-color: var(--info-hover)!important;
-    border-color: var(--info-hover)!important;
-    color: var(--white)!important;
+.z-info.hover:hover:not(:disabled){
+    background-color: var(--info-hover);
+    border-color: var(--info-hover);
+    color: var(--white);
 }
 
 /****** Components *******/

@@ -142,7 +142,7 @@
                                         </label>
                                         <label class="z-check">
                                             <label for="checkbox1">One1</label>
-                                            <input type="checkbox" checked="checked" id="checkbox1" disabled>
+                                            <input type="checkbox" id="checkbox1">
                                             <span></span>
                                         </label>
                                     </div>
@@ -155,7 +155,7 @@
                                         </label>
                                         <label class="z-check">
                                             <label for="radio2">One</label>
-                                            <input type="radio" name="radio" id="radio2" checked="checked" disabled>
+                                            <input type="radio" name="radio" id="radio2">
                                             <span></span>
                                         </label>
                                     </div>
@@ -170,6 +170,74 @@
                                         <button class="z-button z-danger hover">Boton</button>
                                         <button class="z-button z-warning hover">Boton</button>
                                         <button class="z-button z-info hover">Boton</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="z-card">
+                            <div class="z-card-header">
+                                <h3>Titulo de Card</h3>
+                            </div>
+                            <div class="z-card-body">
+                                <div class="row">
+                                    <div class="z-form-group col-6">
+                                        <label for="">Text</label>
+                                        <input type="text" disabled>
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">Select</label>
+                                        <select name="" id="" disabled>
+                                            <option value="Opcion">opcion</option>
+                                        </select>
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">date</label>
+                                        <input type="date" disabled>
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">number</label>
+                                        <input type="number" disabled>
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">checkbox</label>
+                                        <label class="z-check">
+                                            <label for="checkbox">One</label>
+                                            <input type="checkbox" checked="checked" id="checkbox" disabled>
+                                            <span></span>
+                                        </label>
+                                        <label class="z-check">
+                                            <label for="checkbox1">One1</label>
+                                            <input type="checkbox" id="checkbox1" disabled>
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="z-form-group col-6">
+                                        <label for="">radio</label>
+                                        <label class="z-check">
+                                            <label for="radio1">One</label>
+                                            <input type="radio" name="radio" id="radio1" checked="checked" disabled>
+                                            <span></span>
+                                        </label>
+                                        <label class="z-check">
+                                            <label for="radio2">One</label>
+                                            <input type="radio" name="radio" id="radio2" checked="checked" disabled>
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="z-form-group col-12">
+                                        <label for="">textarea</label>
+                                        <textarea name="" id="" cols="30" rows="5" disabled></textarea>
+                                    </div>
+                                    <div class="col12">
+                                        <button class="z-button z-primary hover" disabled>Boton</button>
+                                        <button class="z-button z-secondary hover" disabled>Boton</button>
+                                        <button class="z-button z-success hover" disabled>Boton</button>
+                                        <button class="z-button z-danger hover" disabled>Boton</button>
+                                        <button class="z-button z-warning hover" disabled>Boton</button>
+                                        <button class="z-button z-info hover" disabled>Boton</button>
                                     </div>
                                 </div>
                             </div>
