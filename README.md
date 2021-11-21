@@ -8,8 +8,8 @@ Sea hora mayor al fichaje anterior (De dicho dia)
 Sea hora inferior al fichaje posterior (De dicho dia)
 
 Elementos que añadir:
+    - modals
     - input file
-    - inputs disabled
     - alerts
     - notifications
     - paginations

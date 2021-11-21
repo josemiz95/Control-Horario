@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('dashboard');
-});
-
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 /*El token de inicio de sesion se guardara en una cookie por lo cual se podra comprobar si existe la sesion y que usuario esta con la sesion iniciada
 para continuar con el uso de la aplicacion*/
@@ -28,5 +23,8 @@ para continuar con el uso de la aplicacion*/
 Route::group(['middleware'=>['authCookie']], function () {
     Route::get('/prueba', function () {
         dd(Auth::user());
+    });
+    Route::get('/', function () {
+        return view('dashboard');
     });
 });

@@ -24,7 +24,7 @@
             <div class="contentBox col-12 col-lg-5">
                 <div class="formBox">
                     <h2>Iniciar sesión</h2>
-                    <form action="">
+                    <form id="login-form">
                         <div class="inputBox">
                             <label for="">Email</label>
                             <input type="text" name="email" id="email">
@@ -42,5 +42,12 @@
         </section>
     </div>
     
+    <script>
+        const app = {
+            url: '{{config('app.url')}}'
+        }
+    </script>
+    <script src="{{config('app.url')}}/js/classes.js"></script>
+    <script src="{{config('app.url')}}/js/login.js"></script>
 </body>
 </html>

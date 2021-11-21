@@ -32,6 +32,6 @@ class AuthCookie
         }
 
         Auth::logout();
-        return route('login');
+        return redirect()->route('login');
     }
 }
