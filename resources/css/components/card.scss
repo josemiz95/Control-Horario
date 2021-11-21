@@ -1,0 +1,24 @@
+.z-card{
+    background-color: var(--light);
+    box-shadow: 0 2px 8px var(--shadow), 0 0px 16px var(--shadow);
+    border-radius: var(--border-radius);
+    color: var(--dark);
+    margin-bottom: 24px;
+}
+    .z-card .z-card-header{
+        padding: 15px 15px 0 15px;
+    }
+    .z-card .z-card-body{
+        padding: 15px;
+    }
+
+    /* Card icon */
+    .z-card-body .z-card-icon{
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        --ionicon-stroke-width: 50px;
+    }

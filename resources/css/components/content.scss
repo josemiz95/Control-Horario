@@ -1,0 +1,89 @@
+/****** Main *******/
+.appContainer{
+    position: absolute;
+    width: calc(100% - 215px);
+    left: 215px;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+.topbar{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background: var(--topbar-color);
+    color: var(--topbar-text-color);
+    box-shadow: 0 0.75rem 1.5rem var(--shadow);
+}
+    .topbar div{
+        display: flex;
+        align-items: center;
+    }
+
+    .topbar .toggle{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 35px;
+        font-size: 1.75em;
+        text-align: center;
+        transition: transform 0.5s;
+        color: var(--primary);
+    }
+    .topbar .toggle:hover{
+        color: var(--primary-hover);
+    }
+    .topbar .breadcrumb ul{
+        padding: 10px 10px;
+        list-style: none;
+    }
+        .topbar .breadcrumb ul li{
+            display: inline;
+            font-size: 0.8rem;
+            color: var(--topbar-text-muted);
+        }
+        .topbar .breadcrumb ul li:last-child{
+            color: var(--topbar-text-color);
+            font-weight: 500;
+        }
+        .topbar ul li+li:before {
+            padding: 0 8px;
+            content: ">";
+            color: var(--topbar-text-muted);
+        }
+    .topbar .user{
+        cursor: pointer;
+        padding: 0 5px;
+    }
+    .topbar .settings{
+        font-size: 1.4rem;
+        color: var(--dark);
+    }
+        .topbar .settings .option{
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            padding: 0 5px;
+            cursor: pointer;
+        }
+    /******* Menu collapsed *******/
+    .appContainer.collapsed{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .appContainer.collapsed .topbar .toggle {
+        transform: rotate(180deg);
+    }
+    
+/****** App Content ******/
+.appContainer .content{
+    height: calc(100vh - 45px);
+    width: 100%;
+    padding: 25px;
+    overflow: auto;
+}
+    

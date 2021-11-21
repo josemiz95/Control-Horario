@@ -1,0 +1,105 @@
+/****** Navigation *******/
+.navContainer {
+    position: fixed;
+    width: 215px;
+    height: 100%;
+    background-color: var(--nav-bg-color);
+    transition: 0.5s;
+    overflow:hidden;
+}
+    /****** TOP CONTAINER *******/
+    .navContainer .topContainer{
+        position: relative;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .navContainer .topContainer .logo{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s;
+            max-width: 215px;
+            max-height: 60px;
+        }
+
+    /****** NAVIGATION CONTAINER *******/
+    .navContainer ul{
+        padding-left:10px;
+        margin-top: 20px;
+        width: 100%;
+    }
+        .navContainer ul li {
+            position: relative;
+            width: 100%;
+            list-style: none;
+            border-top-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
+        }
+        .navContainer ul li.active{
+            background: var(--bg-color);
+        }
+        .navContainer ul li a{
+            position: relative;
+            height: 45px;
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            display: flex;
+            color: var(--nav-text-color);
+            padding-left: 5px;
+        }
+        .navContainer ul li.active a{
+            color: var(--nav-active-text-color);
+        }
+        .navContainer ul li a .icon{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 35px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .navContainer ul li a .title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 0 10px;
+            white-space: nowrap;
+            line-height: 50px;
+            transition: opacity 0.5s;
+        }
+        .navContainer ul li.active a::before,
+        .navContainer ul li.active a::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: var(--border-radius);
+            pointer-events: none;
+        }
+        .navContainer ul li.active a::before{
+            top: -50px;
+            box-shadow: 30px 35px 0 10px var(--bg-color);
+        }
+        .navContainer ul li.active a::after{
+            bottom: -50px;
+            box-shadow: 50px -35px 0 10px var(--bg-color);
+        }
+
+    /******* MENU COLLAPSED *******/
+    .navContainer.collapsed{
+        width: 60px;
+    }
+        .navContainer.collapsed ul li a .title{
+            opacity: 0;
+        }
+        .navContainer.collapsed .topContainer .logo{
+            opacity: 0;
+        }

@@ -1,0 +1,21 @@
+.avatar-user {
+    font-size: 11px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 500;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+    .avatar-user.circle {
+        border-radius: 50%!important;
+    }
+    .avatar-user.square {
+        border-radius: var(--border-radius)!important;
+    }
