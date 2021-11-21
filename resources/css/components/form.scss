@@ -82,6 +82,7 @@
       .z-form-group .z-check input:disabled ~ span {
         background-color: var(--disabled);
         opacity: 0.7;
+        cursor: not-allowed
       }
       .z-form-group .z-check span:after {
         content: "";

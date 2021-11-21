@@ -218,12 +218,13 @@
                                         <label for="">radio</label>
                                         <label class="z-check">
                                             <label for="radio1">One</label>
-                                            <input type="radio" name="radio" id="radio1" checked="checked" disabled>
+                                            <input type="radio" name="radioD" id="radio1" disabled>
                                             <span></span>
                                         </label>
                                         <label class="z-check">
                                             <label for="radio2">One</label>
-                                            <input type="radio" name="radio" id="radio2" checked="checked" disabled>
+                                            <input type="radio" name="radioD" id="radio2" checked disabled>
+                                            
                                             <span></span>
                                         </label>
                                     </div>
