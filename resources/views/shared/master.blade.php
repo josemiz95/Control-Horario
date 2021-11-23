@@ -7,10 +7,21 @@
         <link rel="icon" type="image/png" href="{{ config('app.url') }}/images/icon.png"/>
         <link rel="shortcut icon" href="{{ config('app.url') }}images/icon.png">
 
-        @include('shared.head')
+        @include('shared._head')
     </head>
     <body data-sidebar="dark">
-        @yield('content')
-        @include('shared.footer')
+        {{-- Menu --}}
+        @include('shared._sidemenu')
+
+        {{-- Main --}}
+        <div class="appContainer" id="appContainer">
+            @include('shared._topmenu')
+
+            <div class="content">
+                @yield('content')
+            </div>
+        </div>
+        
+        @include('shared._footer')
     </body>
 </html>
