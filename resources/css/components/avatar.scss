@@ -1,5 +1,4 @@
 .avatar-user {
-    font-size: 11px;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -10,12 +9,30 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
 }
     .avatar-user.circle {
         border-radius: 50%!important;
     }
     .avatar-user.square {
         border-radius: $border_radius!important;
+    }
+    .avatar-user.size-sm{
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .avatar-user.size-md{
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+    }
+    .avatar-user.size-lg{
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    .avatar-user.size-xl{
+        width: 65px;
+        height: 65px;
+        font-size: 19px;
     }

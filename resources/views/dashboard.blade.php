@@ -110,12 +110,12 @@
                                         <textarea name="" id="" cols="30" rows="5"></textarea>
                                     </div>
                                     <div class="col12">
-                                        <button class="z-button z-primary hover">Boton</button>
-                                        <button class="z-button z-secondary hover">Boton</button>
-                                        <button class="z-button z-success hover">Boton</button>
-                                        <button class="z-button z-danger hover">Boton</button>
-                                        <button class="z-button z-warning hover">Boton</button>
-                                        <button class="z-button z-info hover">Boton</button>
+                                        <button class="z-button primary hover">Boton</button>
+                                        <button class="z-button secondary hover">Boton</button>
+                                        <button class="z-button success hover">Boton</button>
+                                        <button class="z-button danger hover">Boton</button>
+                                        <button class="z-button warning hover">Boton</button>
+                                        <button class="z-button info hover">Boton</button>
                                     </div>
                                 </div>
                             </div>
@@ -179,12 +179,12 @@
                                         <textarea name="" id="" cols="30" rows="5" disabled></textarea>
                                     </div>
                                     <div class="col12">
-                                        <button class="z-button z-primary hover" disabled>Boton</button>
-                                        <button class="z-button z-secondary hover" disabled>Boton</button>
-                                        <button class="z-button z-success hover" disabled>Boton</button>
-                                        <button class="z-button z-danger hover" disabled>Boton</button>
-                                        <button class="z-button z-warning hover" disabled>Boton</button>
-                                        <button class="z-button z-info hover" disabled>Boton</button>
+                                        <button class="z-button primary hover" disabled>Boton</button>
+                                        <button class="z-button secondary hover" disabled>Boton</button>
+                                        <button class="z-button success hover" disabled>Boton</button>
+                                        <button class="z-button danger hover" disabled>Boton</button>
+                                        <button class="z-button warning hover" disabled>Boton</button>
+                                        <button class="z-button info hover" disabled>Boton</button>
                                     </div>
                                 </div>
                             </div>

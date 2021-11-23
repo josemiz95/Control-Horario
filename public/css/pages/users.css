@@ -1,0 +1,28 @@
+.user-card .avatar{
+    width: 75px;
+}
+
+.user-card .role{
+    width: 75px;
+    height: 24px;
+}
+
+.user-card .role div{
+    width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.user-card .user-links a{
+    line-height: 0;
+}
+
+.user-card .user-details{
+    max-width: calc(100% - 75px);
+}
+
+.user-card .user-details h3, .user-card .user-details p{
+    max-width: 100%;
+    padding-left: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

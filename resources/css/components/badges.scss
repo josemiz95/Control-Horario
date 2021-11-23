@@ -1,0 +1,40 @@
+.z-badge{
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    // line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: $border_radius;
+}
+    .z-badge.primary{
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: var(--white);
+    }
+    .z-badge.secondary{
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--white);
+    }
+    .z-badge.success{
+        background-color: var(--success);
+        border-color: var(--success);
+        color: var(--white);
+    }
+    .z-badge.warning{
+        background-color: var(--warning);
+        border-color: var(--warning);
+        color: var(--black);
+    }
+    .z-badge.danger{
+        background-color: var(--danger);
+        border-color: var(--danger);
+        color: var(--white);
+    }
+    .z-badge.info{
+        background-color: var(--info);
+        border-color: var(--info);
+        color: var(--white);
+    }

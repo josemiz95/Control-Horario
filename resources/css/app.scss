@@ -39,76 +39,13 @@ h4{ font-size: 1rem; }
     cursor: not-allowed!important;
 }
 
-/****** Coloring *******/
-.z-primary{
-    background-color: var(--primary);
-    border-color: var(--primary);
-    color: var(--white);
-}
-.z-primary.hover:hover:not(:disabled){
-    background-color: var(--primary-hover);
-    border-color: var(--primary-hover);
-    color: var(--white);
-}
-
-.z-secondary{
-    background-color: var(--secondary);
-    border-color: var(--secondary);
-    color: var(--white);
-}
-.z-secondary.hover:hover:not(:disabled){
-    background-color: var(--secondary-hover);
-    border-color: var(--secondary-hover);
-    color: var(--white);
-}
-
-.z-success{
-    background-color: var(--success);
-    border-color: var(--success);
-    color: var(--white);
-}
-.z-success.hover:hover:not(:disabled){
-    background-color: var(--success-hover);
-    border-color: var(--success-hover);
-    color: var(--white);
-}
-
-.z-warning{
-    background-color: var(--warning);
-    border-color: var(--warning);
-    color: var(--black);
-}
-.z-warning.hover:hover:not(:disabled){
-    background-color: var(--warning-hover);
-    border-color: var(--warning-hover);
-    color: var(--black);
-}
-
-.z-danger{
-    background-color: var(--danger);
-    border-color: var(--danger);
-    color: var(--white);
-}
-.z-danger.hover:hover:not(:disabled){
-    background-color: var(--danger-hover);
-    border-color: var(--danger-hover);
-    color: var(--white);
-}
-
-.z-info{
-    background-color: var(--info);
-    border-color: var(--info);
-    color: var(--white);
-}
-.z-info.hover:hover:not(:disabled){
-    background-color: var(--info-hover);
-    border-color: var(--info-hover);
-    color: var(--white);
-}
+/****** helpers *******/
+@import "helpers/coloring";
+@import "helpers/fonts";
 
 /****** Components *******/
-
 @import "components/avatar";
+@import "components/badges";
 @import "components/button";
 @import "components/card";
 @import "components/content";

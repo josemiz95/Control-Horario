@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ViewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +25,8 @@ Route::group(['middleware'=>['authCookie']], function () {
     Route::get('/prueba', function () {
         dd(Auth::user());
     });
-    Route::get('/', function () {
-        return view('dashboard');
-    });
+
+    Route::view('/', 'dashboard')->name('web.dashboard');
+
+    Route::view('/users', 'users.index')->name('web.users');
 });

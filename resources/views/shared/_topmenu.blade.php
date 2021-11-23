@@ -20,7 +20,7 @@
             <span class="option" id="colorsToggle"><ion-icon name="moon-outline"></ion-icon></span>
         </div>
         <div class="user">
-            <span class="avatar-user circle" style="color:#AC3EFF; background-color:#AC3EFF25">JMZ</span>
+            <span class="avatar-user size-sm circle" style="color:#AC3EFF; background-color:#AC3EFF25">JMZ</span>
         </div>
         
     </div>

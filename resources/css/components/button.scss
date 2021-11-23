@@ -14,3 +14,69 @@
     font-size: 1rem;
     border-radius: $border_radius;
 }
+
+.z-button.primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+.z-button.primary.hover:hover:not(:disabled){
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--white);
+}
+
+.z-button.secondary{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+}
+.z-button.secondary.hover:hover:not(:disabled){
+    background-color: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+    color: var(--white);
+}
+
+.z-button.success{
+    background-color: var(--success);
+    border-color: var(--success);
+    color: var(--white);
+}
+.z-button.success.hover:hover:not(:disabled){
+    background-color: var(--success-hover);
+    border-color: var(--success-hover);
+    color: var(--white);
+}
+
+.z-button.warning{
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color: var(--black);
+}
+.z-button.warning.hover:hover:not(:disabled){
+    background-color: var(--warning-hover);
+    border-color: var(--warning-hover);
+    color: var(--black);
+}
+
+.z-button.danger{
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color: var(--white);
+}
+.z-button.danger.hover:hover:not(:disabled){
+    background-color: var(--danger-hover);
+    border-color: var(--danger-hover);
+    color: var(--white);
+}
+
+.z-button.info{
+    background-color: var(--info);
+    border-color: var(--info);
+    color: var(--white);
+}
+.z-button.info.hover:hover:not(:disabled){
+    background-color: var(--info-hover);
+    border-color: var(--info-hover);
+    color: var(--white);
+}
