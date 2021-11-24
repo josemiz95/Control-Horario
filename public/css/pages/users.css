@@ -15,11 +15,10 @@
 .user-card .user-links a{
     line-height: 0;
 }
-
-.user-card .user-details{
-    max-width: calc(100% - 75px);
+.user-card .user-links{
+    border-top: 1px solid var(--disabled);
 }
-.user-card .user-details h3{
+.user-card .user-details p{
     white-space: nowrap;
 }
 
