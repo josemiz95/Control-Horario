@@ -46,3 +46,6 @@ colorsModeBtn.addEventListener('click', function(){
         colorsModeBtn.querySelector('ion-icon').setAttribute('name','moon-outline');
     }
 });
+
+const z = new ZFunctions();
+const globalData = {};

@@ -31,7 +31,7 @@ class UsersController extends Controller
             'leave_days'=>'nullable|numeric',
             'status'=>'nullable|numeric|in:0,1',
             'siglas'=>'nullable|string|max:3',
-            'color'=>'nullable|string|max:10',
+            'color'=>'nullable|string|size:7|starts_with:#',
         ]);
         
         if(!$validation->fails()){

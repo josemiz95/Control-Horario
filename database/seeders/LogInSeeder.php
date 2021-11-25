@@ -16,8 +16,8 @@ class LogInSeeder extends Seeder
      */
     public function run()
     {
-        Role::create([ 'name'=>'Admin' ]);
-        Role::create([ 'name'=>'User' ]);
-        User::create([ 'name'=>'Josemi', 'email'=>'josemiz95@gmail.com', 'password'=>Hash::make('Password123') ]);
+        $admin = Role::create([ 'name'=>'Admin', 'color'=>'success' ]);
+        $user = Role::create([ 'name'=>'Usuario', 'color'=>'secondary' ]);
+        User::create([ 'name'=>'Josemi', 'email'=>'josemiz95@gmail.com', 'password'=>Hash::make('Password123'), 'role_id'=>$admin->id ]);
     }
 }

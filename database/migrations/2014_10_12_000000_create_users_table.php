@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('color')->default('primary');
             $table->boolean('visible')->default(1);
         });
 
