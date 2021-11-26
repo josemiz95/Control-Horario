@@ -15,5 +15,6 @@
 @endsection
 
 @section('script')
-<script src="{{config('app.url')}}/js/users/users.js"></script>
+    <script src="{{config('app.url')}}/js/users/users.js"></script>
+    <script src="{{config('app.url')}}/js/components/users/user-card.js"></script>
 @endsection

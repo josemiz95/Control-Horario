@@ -24,7 +24,6 @@
 
 .user-card .user-details h3, .user-card .user-details p{
     max-width: 100%;
-    padding-left: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
 }
