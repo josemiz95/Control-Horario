@@ -630,6 +630,81 @@ h4 {
   background: var(--light);
 }
 
+.z-modal, .z-modal::before {
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: flex-start;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.z-modal.z-modal-center {
+  align-items: center;
+}
+
+.z-modal::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.19);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+}
+
+.z-modal.active, .z-modal.active::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.z-modal .z-modal-contentainer {
+  z-index: 1;
+  margin-top: 15px;
+  background-color: var(--light);
+  box-shadow: 0 2px 8px var(--shadow), 0 0px 16px var(--shadow);
+  border-radius: 8px;
+  color: var(--dark);
+}
+
+.z-modal.z-modal-lg .z-modal-contentainer {
+  max-width: 800px;
+  width: 100%;
+}
+
+.z-modal .z-modal-contentainer .z-modal-header {
+  padding: 15px;
+  box-shadow: 0 2px 8px var(--shadow), 0 0px 2px var(--shadow);
+  display: flex;
+  width: 100%;
+}
+
+.z-modal .z-modal-contentainer .z-modal-header h2 {
+  width: calc(100% - 40px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.z-modal .z-modal-contentainer .z-modal-close {
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--muted);
+  width: 40px;
+  cursor: pointer;
+}
+
+.z-modal .z-modal-contentainer .z-modal-body {
+  padding: 15px;
+  overflow: auto;
+}
+
 /****** Navigation *******/
 .navContainer {
   position: fixed;

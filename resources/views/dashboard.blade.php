@@ -191,6 +191,18 @@
                         </div>
                     </div>
 
+                    <div class="z-modal z-modal-lg active">
+                        <div class="z-modal-contentainer">
+                            <div class="z-modal-header">
+                                <h2>Titulo del modal</h2>
+                                <button class="z-modal-close"><ion-icon name="close-outline"></ion-icon></button>
+                            </div>
+                            <div class="z-modal-body">
+                                ad
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 @endsection

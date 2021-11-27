@@ -1,10 +1,10 @@
-class Tooltip extends HTMLElement {
+class UserCard extends HTMLElement {
     constructor(){
         super();
         this._user = {};
     }
 
-    connectedCallback(){ // When Reder the component
+    connectedCallback(){
         if(this.hasAttribute('user')){
             this._user = JSON.parse(this.getAttribute('user'));
             this.innerHTML = this._buildCard();
@@ -37,4 +37,4 @@ class Tooltip extends HTMLElement {
     }
 }
 
-customElements.define('z-user-card',Tooltip);
+customElements.define('z-user-card',UserCard);

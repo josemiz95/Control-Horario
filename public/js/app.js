@@ -47,5 +47,14 @@ colorsModeBtn.addEventListener('click', function(){
     }
 });
 
+// COMPONENTES
+    // MODAL CLOSE
+    const closeModalBtn = document.querySelectorAll('.z-modal-close');
+    closeModalBtn.forEach( e => {
+        e.addEventListener('click', function(){
+            e.closest('.z-modal').classList.remove('active');
+        });
+    })
+
 const z = new ZFunctions();
 const globalData = {};

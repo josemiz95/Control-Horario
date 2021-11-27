@@ -12,9 +12,14 @@
             
         </div>
     </div>
+
+    <z-user-form></z-user-form>
 @endsection
 
 @section('script')
-    <script src="{{config('app.url')}}/js/users/users.js"></script>
+{{-- Components --}}
     <script src="{{config('app.url')}}/js/components/users/user-card.js"></script>
+    <script src="{{config('app.url')}}/js/components/users/user-form.js"></script>
+
+    <script src="{{config('app.url')}}/js/users/users.js"></script>
 @endsection
