@@ -7,10 +7,15 @@ class ZFunctions {
     }
 
     async fetch(options){
+        let defaultHeaders = {
+            "Accept":"application/json",
+            "Authorization":(this.getCookie('bearerToken'))?"Bearer "+this.getCookie('bearerToken'):null
+        };
+
         options = {
             url: options.url,
             method: options.method ?? 'GET',
-            headers: options.headers ?? {"Accept":"application/json", "Authorization":(this.getCookie('bearerToken'))?"Bearer "+this.getCookie('bearerToken'):null},
+            headers: options.headers ?? defaultHeaders,
             data: options.data,
             success: (typeof options.success=="function")?options.success:()=>{},
             fail: (typeof options.fail=="function")?options.fail:()=>{},

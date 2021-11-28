@@ -1,6 +1,7 @@
 const newUserBtn = document.getElementById('new-user-btn');
 const usersContainer = document.getElementById('users-container');
 const usersForm = document.querySelector('z-user-form#form-user-modal');
+const searchInput = document.getElementById('search-input');
 
 newUserBtn.addEventListener('click', function(){
     usersForm.setAttribute('user', '');
@@ -9,18 +10,35 @@ newUserBtn.addEventListener('click', function(){
     usersForm.open();
 });
 
+searchInput.addEventListener('keyup', setUsers);
+
 usersForm.addEventListener('submitForm', function(e){
     let form = e.target;
     if(usersForm.validate() !== true){
         alert(usersForm.validate());
     } else {
+        let data = new FormData(form);
         if(usersForm.action == 'update'){
-
+            data.append('_method','PUT');
+            z.fetch({
+                url: app.url+"/api/users/"+usersForm.user.id,
+                method: 'POST',
+                data,
+                success: (response) => {
+                    globalData.users = globalData.users.map((u)=> u.id == response.id?response:u);
+                    setUsers();
+                    usersForm.close();
+                },
+                fail: (response) => {
+                    console.log("ERROR");
+                    console.log(response);
+                }
+            });
         } else {
             z.fetch({
                 url: app.url+"/api/users",
                 method: 'POST',
-                data: new FormData(form),
+                data,
                 success: (response) => {
                     createUserCard(response);
                     globalData.users.push(response);
@@ -50,9 +68,7 @@ async function getAndSetUsers(){
 
 async function setUsers(){
     usersContainer.innerHTML = '';
-    globalData.users.forEach(u => {
-        createUserCard(u);
-    });
+    globalData.users.map(u => u.name.toUpperCase().includes(searchInput.value.toUpperCase())? createUserCard(u): null);
 }
 
 function createUserCard(user){

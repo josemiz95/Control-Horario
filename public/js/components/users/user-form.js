@@ -1,7 +1,7 @@
 class UserFrom extends HTMLElement {
     constructor(){
         super();
-        this._user = null;
+        this.user = null;
 
         // components
         this._form = null;
@@ -21,7 +21,7 @@ class UserFrom extends HTMLElement {
         this._modal = this.querySelector('.z-modal');
         this._modalTitle = this.querySelector('.z-modal-header h2');
 
-        this._user = JSON.parse(this.getAttribute('user'));
+        this.user = JSON.parse(this.getAttribute('user'));
 
         this._inputs = {
             id: this.querySelector('#user_id'),
@@ -51,9 +51,9 @@ class UserFrom extends HTMLElement {
         switch(name){
             case 'user':
                 try {
-                    this._user = JSON.parse(newValue);
+                    this.user = JSON.parse(newValue);
                 } catch (e) {
-                    this._user = null;
+                    this.user = null;
                 }
                 this._fillModal();
                 break;
@@ -148,14 +148,14 @@ class UserFrom extends HTMLElement {
 
     _fillModal(){
         if(this._inputs != null){
-            if(this._user != null){
-                this._inputs.id.value = this._user.id ?? null;
-                this._inputs.name.value = this._user.name ?? null;
-                this._inputs.surname.value = this._user.surname ?? null;
-                this._inputs.email.value = this._user.email ?? null;
-                this._inputs.leave_days.value = this._user.leave_days ?? null;
-                this._inputs.nif.value = this._user.nif ?? null;
-                this._inputs.role_id.value = this._user.role_id ?? 2;
+            if(this.user != null){
+                this._inputs.id.value = this.user.id ?? null;
+                this._inputs.name.value = this.user.name ?? null;
+                this._inputs.surname.value = this.user.surname ?? null;
+                this._inputs.email.value = this.user.email ?? null;
+                this._inputs.leave_days.value = this.user.leave_days ?? null;
+                this._inputs.nif.value = this.user.nif ?? null;
+                this._inputs.role_id.value = this.user.role_id ?? 2;
             } else {
                 this._inputs.id.value = '';
                 this._inputs.name.value = '';
