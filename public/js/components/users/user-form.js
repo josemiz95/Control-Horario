@@ -1,10 +1,13 @@
 class UserFrom extends HTMLElement {
     constructor(){
         super();
-        this._user = {};
+        this._user = null;
 
         // components
+        this._form = null;
         this._closeModalBtn = null;
+        this._modal = null;
+        this._inputs = null;
     }
 
     connectedCallback(){
@@ -12,24 +15,70 @@ class UserFrom extends HTMLElement {
 
         // get elements 
         this._closeModalBtn = this.querySelector('.z-modal-close');
+        this._form = this.querySelector('form');
         this._modal = this.querySelector('.z-modal');
 
-        this._closeModalBtn.addEventListener('click', this._hideModal.bind(this));
+        this._user = JSON.parse(this.getAttribute('user'));
+
+        this._inputs = {
+            name: this.querySelector('#user_name'),
+            surname: this.querySelector('#user_surname'),
+            email: this.querySelector('#user_email'),
+            leave_days: this.querySelector('#user_leaves'),
+            nif: this.querySelector('#user_nif'),
+            role_id:this.querySelector('#user_rol'),
+            password:this.querySelector('#user_password'),
+            password2:this.querySelector('#user_password2'),
+        };
+
+        this._closeModalBtn.addEventListener('click', this.hideModal.bind(this));
+        this._form.addEventListener('submit', this.submit);
+
+        this._fillModal();
     }
 
-    _hideModal(){
+    static get observedAttributes() {
+        return ['user'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if(oldValue === newValue){ return; }
+
+        switch(name){
+            case 'user':
+                try {
+                    this._user = JSON.parse(newValue);
+                } catch (e) {
+                    this._user = null;
+                }
+                this._fillModal();
+            break;
+        }
+    }
+
+    hideModal(){
         this._modal.classList.remove('active');
     }
 
+    openModal(){
+        this._modal.classList.add('active');
+    }
+
+    submit(e){
+        e.preventDefault();
+        const submitEvent = new Event('submitForm', {bubbles: true, composed: true});
+        e.target.dispatchEvent(submitEvent);
+    }
+
     _buildCard() {
-        return `<div class="z-modal z-modal-lg active">
+        return `<div class="z-modal z-modal-lg">
                     <div class="z-modal-contentainer">
                         <div class="z-modal-header">
                             <h2>Usuario</h2>
                             <button class="z-modal-close"><ion-icon name="close-outline"></ion-icon></button>
                         </div>
                         <div class="z-modal-body">
-                            <form action="">
+                            <form>
                                 <div class="row">
                                     <div class="z-form-group col-6">
                                         <label for="user_name">Nombre</label>
@@ -68,12 +117,34 @@ class UserFrom extends HTMLElement {
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center mt-2">
-                                    <button class="z-button primary hover mx-2">Guardar</button>
+                                    <button type="submit" class="z-button primary hover mx-2">Guardar</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>`;
+    }
+
+    _fillModal(){
+        if(this._inputs != null){
+            if(this._user != null){
+                this._inputs.name.value = this._user.name ?? null;
+                this._inputs.surname.value = this._user.surname ?? null;
+                this._inputs.email.value = this._user.email ?? null;
+                this._inputs.leave_days.value = this._user.leave_days ?? null;
+                this._inputs.nif.value = this._user.nif ?? null;
+                this._inputs.role_id.value = this._user.role_id ?? 2;
+            } else {
+                this._inputs.name.value = '';
+                this._inputs.surname.value = '';
+                this._inputs.email.value = '';
+                this._inputs.leave_days.value = '';
+                this._inputs.nif.value = '';
+                this._inputs.role_id.value = '';
+            }
+            this._inputs.password.value = '';
+            this._inputs.password2.value = '';
+        }
     }
 }
 
