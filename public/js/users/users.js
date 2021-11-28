@@ -23,6 +23,7 @@ usersForm.addEventListener('submitForm', function(e){
                 data: new FormData(form),
                 success: (response) => {
                     createUserCard(response);
+                    globalData.users.push(response);
                     usersForm.close();
                 },
                 fail: (response) => {
@@ -48,6 +49,7 @@ async function getAndSetUsers(){
 }
 
 async function setUsers(){
+    usersContainer.innerHTML = '';
     globalData.users.forEach(u => {
         createUserCard(u);
     });
