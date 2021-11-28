@@ -18,11 +18,10 @@
         
         <div class="row" id="users-container">
             {{-- USER CARD --}}
-            
         </div>
     </div>
 
-    <z-user-form id="form-user-modal"></z-user-form>
+    <z-user-form id="form-user-modal" title=""></z-user-form>
 @endsection
 
 @section('script')

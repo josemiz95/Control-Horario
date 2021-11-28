@@ -39,6 +39,8 @@ class UsersController extends Controller
             $data['password'] = Hash::make($data['password']);
 
             $user = User::create($data);
+            $user = $user->fresh();
+            $user->role;
 
             return response($user, 201);
         }

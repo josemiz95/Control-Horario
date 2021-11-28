@@ -4,11 +4,34 @@ const usersForm = document.querySelector('z-user-form#form-user-modal');
 
 newUserBtn.addEventListener('click', function(){
     usersForm.setAttribute('user', '');
-    usersForm.openModal();
+    usersForm.setAttribute('title', 'Crear usuario');
+    usersForm.setAttribute('action', 'create');
+    usersForm.open();
 });
 
 usersForm.addEventListener('submitForm', function(e){
     let form = e.target;
+    if(usersForm.validate() !== true){
+        alert(usersForm.validate());
+    } else {
+        if(usersForm.action == 'update'){
+
+        } else {
+            z.fetch({
+                url: app.url+"/api/users",
+                method: 'POST',
+                data: new FormData(form),
+                success: (response) => {
+                    createUserCard(response);
+                    usersForm.close();
+                },
+                fail: (response) => {
+                    console.log("ERROR");
+                    console.log(response);
+                }
+            });
+        }
+    }
 });
 
 getAndSetUsers();
@@ -26,15 +49,21 @@ async function getAndSetUsers(){
 
 async function setUsers(){
     globalData.users.forEach(u => {
-        let userCard = document.createElement('z-user-card');
-            userCard.setAttribute('user', JSON.stringify(u));
-            userCard.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
+        createUserCard(u);
+    });
+}
+
+function createUserCard(user){
+    let userCard = document.createElement('z-user-card');
+        userCard.setAttribute('user', JSON.stringify(user));
+        userCard.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
 
         userCard.addEventListener('viewUser', function(e){
             usersForm.setAttribute('user', JSON.stringify(this.user));
-            usersForm.openModal();
+            usersForm.setAttribute('title', 'Modificar '+this.user.name);
+            usersForm.setAttribute('action', 'update');
+            usersForm.open();
         });
         
         usersContainer.append(userCard);
-    });
 }

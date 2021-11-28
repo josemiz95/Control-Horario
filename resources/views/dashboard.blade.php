@@ -191,7 +191,7 @@
                         </div>
                     </div>
 
-                    <div class="z-modal z-modal-lg active">
+                    <div class="z-modal z-modal-lg">
                         <div class="z-modal-contentainer">
                             <div class="z-modal-header">
                                 <h2>Titulo del modal</h2>
@@ -202,7 +202,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 @endsection
