@@ -3,6 +3,9 @@ const usersContainer = document.getElementById('users-container');
 const usersForm = document.querySelector('z-user-form#form-user-modal');
 const searchInput = document.getElementById('search-input');
 
+getAndSetUsers();
+
+/****  EVENTS ****/
 newUserBtn.addEventListener('click', function(){
     usersForm.setAttribute('user', '');
     usersForm.setAttribute('title', 'Crear usuario');
@@ -12,49 +15,19 @@ newUserBtn.addEventListener('click', function(){
 
 searchInput.addEventListener('keyup', setUsers);
 
-usersForm.addEventListener('submitForm', function(e){
-    let form = e.target;
-    if(usersForm.validate() !== true){
-        alert(usersForm.validate());
+usersForm.onSubmit = (response)=>{
+    if(usersForm.action == 'update'){
+        globalData.users = globalData.users.map((u)=> u.id == response.id?response:u);
+        setUsers();
+        usersForm.close();
     } else {
-        let data = new FormData(form);
-        if(usersForm.action == 'update'){
-            data.append('_method','PUT');
-            z.fetch({
-                url: app.url+"/api/users/"+usersForm.user.id,
-                method: 'POST',
-                data,
-                success: (response) => {
-                    globalData.users = globalData.users.map((u)=> u.id == response.id?response:u);
-                    setUsers();
-                    usersForm.close();
-                },
-                fail: (response) => {
-                    console.log("ERROR");
-                    console.log(response);
-                }
-            });
-        } else {
-            z.fetch({
-                url: app.url+"/api/users",
-                method: 'POST',
-                data,
-                success: (response) => {
-                    createUserCard(response);
-                    globalData.users.push(response);
-                    usersForm.close();
-                },
-                fail: (response) => {
-                    console.log("ERROR");
-                    console.log(response);
-                }
-            });
-        }
+        createUserCard(response);
+        globalData.users.push(response);
+        usersForm.close();
     }
-});
+}
 
-getAndSetUsers();
-
+/****  FUNCTIONS ****/
 async function getAndSetUsers(){
     z.fetch({
         url: app.url+"/api/users",
@@ -68,7 +41,11 @@ async function getAndSetUsers(){
 
 async function setUsers(){
     usersContainer.innerHTML = '';
-    globalData.users.map(u => u.name.toUpperCase().includes(searchInput.value.toUpperCase())? createUserCard(u): null);
+    globalData.users.map(u => 
+        u.name.toUpperCase().includes(searchInput.value.toUpperCase()) ||
+        u.email.toUpperCase().includes(searchInput.value.toUpperCase()) ? 
+        createUserCard(u): null
+    );
 }
 
 function createUserCard(user){

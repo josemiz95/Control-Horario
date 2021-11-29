@@ -10,6 +10,7 @@ class UserFrom extends HTMLElement {
         this._modalTitle = null;
         this._inputs = null;
         this.action = "create";
+        this.onSubmit = ()=>{};
     }
 
     connectedCallback(){
@@ -36,7 +37,7 @@ class UserFrom extends HTMLElement {
         };
 
         this._closeModalBtn.addEventListener('click', this.close.bind(this));
-        this._form.addEventListener('submit', this.submit);
+        this._form.addEventListener('submit', this.submit.bind(this));
 
         this._fillModal();
     }
@@ -58,9 +59,8 @@ class UserFrom extends HTMLElement {
                 this._fillModal();
                 break;
             case 'title':
-                if(typeof this._modalTitle != "undefined" && this._modalTitle){
+                if(typeof this._modalTitle != "undefined" && this._modalTitle)
                     this._modalTitle.innerHTML = newValue;
-                }
                 break;
             case 'action':
                 this.action = newValue ?? 'create';
@@ -78,7 +78,34 @@ class UserFrom extends HTMLElement {
 
     submit(e){
         e.preventDefault();
-        const submitEvent = new Event('submitForm', {bubbles: true, composed: true});
+
+        if(this.validate() !== true){
+            alert(this.validate());
+        } else {
+            let data = new FormData(e.target);
+            let url = app.url+"/api/users";
+
+            if(this.action == 'update'){
+                data.append('_method','PUT');
+                url = app.url+"/api/users/"+this.user.id
+            }
+
+            z.fetch({
+                url,
+                method: 'POST',
+                data,
+                success: (response) => {
+                    if(typeof this.onSubmit == 'function')
+                        this.onSubmit(response);
+                },
+                fail: (response) => {
+                    console.log("ERROR");
+                    console.log(response);
+                }
+            });
+        }
+
+        const submitEvent = new Event('submitedForm', {bubbles: true, composed: true});
         e.target.dispatchEvent(submitEvent);
     }
 

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> @yield('title', 'Control Horario') </title>
         <link rel="icon" type="image/png" href="{{ config('app.url') }}/images/icon.png"/>
-        <link rel="shortcut icon" href="{{ config('app.url') }}images/icon.png">
+        <link rel="shortcut icon" href="{{ config('app.url') }}/images/icon.png">
 
         @include('shared._head')
     </head>
