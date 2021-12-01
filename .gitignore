@@ -4,6 +4,7 @@
 /public/css/app.css
 /public/css/colors.css
 /public/css/dark.css
+/public/mix-manifest.json
 /storage/*.key
 /vendor
 .env
