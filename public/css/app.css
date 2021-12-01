@@ -491,6 +491,7 @@ ul {
 .topbar .breadcrumb ul {
   padding: 10px 10px;
   list-style: none;
+  margin-left: 0;
 }
 
 .topbar .breadcrumb ul li {
@@ -787,6 +788,7 @@ ul {
 .navContainer ul {
   padding-left: 10px;
   margin-top: 20px;
+  margin-left: 0px;
   width: 100%;
 }
 
