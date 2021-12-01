@@ -4,24 +4,30 @@
     --black: #2a3042;
 
     --primary: #4596ff;
+    --primary-light: #4596ff30;
     --primary-hover: #2f88fc;
 
     --secondary: #FF7A29;
+    --secondary-light: #FF7A2930;
     --secondary-hover: #FF7A29;
 
     --muted: #607d8b;
     --disabled: #cecece;
 
-    --success: green;
+    --success: #008000;
+    --success-light: #00800030;
     --success-hover: green;
 
     --danger: #dc3545;
+    --danger-light: #dc354530;
     --danger-hover: #dc3545;
 
     --warning: #ffc107;
+    --warning-light: #ffc10730;
     --warning-hover: #ffc107;
     
     --info: #17a2b8;
+    --info-light: #17a2b830;
     --info-hover: #17a2b8;
 
     --light: #f8f9fa;

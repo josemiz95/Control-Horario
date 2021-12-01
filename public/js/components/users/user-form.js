@@ -8,6 +8,7 @@ class UserFrom extends HTMLElement {
         this._closeModalBtn = null;
         this._modal = null;
         this._modalTitle = null;
+        this._errors = null;
         this._inputs = null;
         this.action = "create";
         this.onSubmit = ()=>{};
@@ -21,6 +22,7 @@ class UserFrom extends HTMLElement {
         this._form = this.querySelector('form');
         this._modal = this.querySelector('.z-modal');
         this._modalTitle = this.querySelector('.z-modal-header h2');
+        this._errors = this.querySelector('.z-modal-body .errors');
 
         this.user = JSON.parse(this.getAttribute('user'));
 
@@ -73,6 +75,7 @@ class UserFrom extends HTMLElement {
     }
 
     open(){
+        this._errors.classList.add('d-none');
         this._modal.classList.add('active');
     }
 
@@ -99,8 +102,21 @@ class UserFrom extends HTMLElement {
                         this.onSubmit(response);
                 },
                 fail: (response) => {
-                    console.log("ERROR");
-                    console.log(response);
+                    let mainList = '';
+                    if(response.errors){
+                        let fields = response.errors;
+                        mainList = document.createElement('ul');
+                        
+                        this._setError(fields['name'], 'Nombre', mainList);
+                        this._setError(fields['surname'], 'Apellidos', mainList);
+                        this._setError(fields['password'], 'Contraseña', mainList);
+                        this._setError(fields['nif'], 'NIF', mainList);
+                        this._setError(fields['leave_days'], 'Vacaciones', mainList);
+                        this._setError(fields['role_id'], 'Rol', mainList);
+
+                        this._errors.classList.remove('d-none');
+                    }
+                    this._errors.append(mainList);
                 }
             });
         }
@@ -125,6 +141,8 @@ class UserFrom extends HTMLElement {
                             <button class="z-modal-close"><ion-icon name="close-outline"></ion-icon></button>
                         </div>
                         <div class="z-modal-body">
+                            <div class="errors z-alert danger d-none">
+                            </div>
                             <form>
                                 <input type="hidden" name="id" id="user_id">
                                 <div class="row">
@@ -141,7 +159,7 @@ class UserFrom extends HTMLElement {
                                         <input type="text" id="user_email" name="email">
                                     </div>
                                     <div class="z-form-group col-6">
-                                        <label for="user_leaves">Vacaviones</label>
+                                        <label for="user_leaves">Vacaciones</label>
                                         <input type="number" id="user_leaves" name="leave_days">
                                     </div>
                                     <div class="z-form-group col-6">
@@ -194,6 +212,26 @@ class UserFrom extends HTMLElement {
             }
             this._inputs.password.value = '';
             this._inputs.password2.value = '';
+        }
+    }
+
+    _setError(array, errorName, mainList){
+        if(Array.isArray(array) && array.length > 0){
+            var error = document.createElement('li');
+            var errorTitle = document.createElement('strong');
+                errorTitle.innerHTML = errorName;
+                error.append(errorTitle);
+
+            var errorList = document.createElement('ul');
+                array.forEach(e => {
+                    var element = document.createElement('li');
+                        element.innerHTML = e;
+                    
+                    errorList.append(element);
+                });
+
+            error.append(errorList);
+            mainList.append(error);
         }
     }
 }
