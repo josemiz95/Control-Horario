@@ -106,9 +106,10 @@ class UserFrom extends HTMLElement {
                     if(response.errors){
                         let fields = response.errors;
                         mainList = document.createElement('ul');
-                        
+
                         this._setError(fields['name'], 'Nombre', mainList);
                         this._setError(fields['surname'], 'Apellidos', mainList);
+                        this._setError(fields['email'], 'Correo Electrónico', mainList);
                         this._setError(fields['password'], 'Contraseña', mainList);
                         this._setError(fields['nif'], 'NIF', mainList);
                         this._setError(fields['leave_days'], 'Vacaciones', mainList);
@@ -116,6 +117,7 @@ class UserFrom extends HTMLElement {
 
                         this._errors.classList.remove('d-none');
                     }
+                    this._errors.innerHTML = "";
                     this._errors.append(mainList);
                 }
             });
