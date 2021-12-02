@@ -59,4 +59,17 @@
         --input-focused: var(--primary);
         --input-secondary: #dfdfdf;
         --input-hover: #c7c7c7;
+
+        /** Calendar **/
+        --calendar-header-bg-color: var(--danger);
+        --calendar-header-color: var(--white);
+
+        --calendar-bg-color: var(--light);
+        --calendar-color: var(--dark);
+
+        --calendar-weekend-bg-color: #cecece30;
+        --calendar-weekend-color: #999999;
+
+        --calendar-today-bg-color: var(--success-light);
+        --calendar-today-color: var(--success);
 }

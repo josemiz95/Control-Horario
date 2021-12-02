@@ -27,6 +27,7 @@ Route::group(['middleware'=>['authCookie']], function () {
     });
 
     Route::view('/', 'dashboard')->name('web.dashboard');
+    Route::view('/test', 'testComponent')->name('web.test');
 
     Route::view('/users', 'users.index')->name('web.users');
 });

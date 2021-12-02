@@ -1,0 +1,37 @@
+.z-calendar{
+    width: 100%;
+    min-width: 350px;
+}
+    .z-calendar-header, .z-calendar-body {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .z-calendar-header div, .z-calendar-body div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .z-calendar-header {
+        background-color: var(--calendar-header-bg-color);
+        border-radius: $border_radius $border_radius 0 0;
+        color: var(--calendar-header-color);
+        padding: 10px 0;
+    }
+    .z-calendar-body {
+        background-color: var(--calendar-bg-color);
+        border: 2px solid var(--calendar-header-bg-color);
+        border-radius: 0 0 $border_radius $border_radius ;
+        color: var(--calendar-color);
+    }
+    .z-calendar-body div {
+        padding: 10px 0;
+    }
+    .z-calendar-body .z-calendar-weekend{
+        background-color: var(--calendar-weekend-bg-color);
+        color: var(--calendar-weekend-color);
+    }
+    .z-calendar-body .z-calendar-today{
+        background-color: var(--calendar-today-bg-color);
+        color: var(--calendar-today-color);
+    }

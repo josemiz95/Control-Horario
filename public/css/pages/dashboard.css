@@ -1,0 +1,21 @@
+.btn-checkio{
+    font-size: 50px;
+    font-weight: 500;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .btn-checkio.in{
+        color: var(--success);
+        background-color:  var(--success-light);
+    }
+    .btn-checkio.in ion-icon{
+        margin-left: 5px;
+    }
+    .btn-checkio.out{
+        color: var(--danger);
+        background-color:  var(--danger-light);
+    }
