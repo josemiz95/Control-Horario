@@ -74,7 +74,7 @@
 
                         <div class="col-12">
                             <div class="z-card">
-                                <div class="z-card-body">
+                                <div class="z-card-body p-0">
                                     <div class="z-calendar">
                                         <div class="z-calendar-header">
                                             <div>Lun</div>
