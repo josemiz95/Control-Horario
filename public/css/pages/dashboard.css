@@ -11,11 +11,28 @@
     .btn-checkio.in{
         color: var(--success);
         background-color:  var(--success-light);
+        transition: background 0.5s, color 0.5s;
     }
     .btn-checkio.in ion-icon{
         margin-left: 5px;
     }
+    .btn-checkio.in:hover{
+        color: var(--white);
+        background-color:  var(--success);
+    }
     .btn-checkio.out{
         color: var(--danger);
         background-color:  var(--danger-light);
+        transition: background 0.5s, color 0.5s;
+    }
+    .btn-checkio.out:hover{
+        color: var(--white);
+        background-color:  var(--danger);
+    }
+
+.checkContainer{
+    display: flex;
+}
+    .checkContainer .time{
+        min-width: 50px;
     }

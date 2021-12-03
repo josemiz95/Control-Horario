@@ -15,12 +15,12 @@
                         <h2>Fichar</h2>
                     </div>
                     <div class="z-card-body">
-                        <div class="d-flex align-items-center justify-content-center">
+                        {{-- <div class="d-flex align-items-center justify-content-center">
                             <a class="z-button btn-checkio in"><ion-icon name="play-outline"></ion-icon></a>
                         </div>
                         <div class="d-flex align-items-center justify-content-center pt-2">
                             <h3>Entrar</h3>
-                        </div>
+                        </div> --}}
 
                         <div class="d-flex align-items-center justify-content-center">
                             <a class="z-button btn-checkio out"><ion-icon name="stop-outline"></ion-icon></ion-icon></a>
@@ -29,6 +29,28 @@
                             <h3>Salir</h3>
                         </div>
 
+                        <div>
+                            <ul class="z-time-line">
+                                <li>
+                                    <div class="checkContainer">
+                                        <div class="time">10:30</div>
+                                        <div class="z-badge success">Iniciar</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkContainer">
+                                        <div class="time">10:00</div>
+                                        <span class="z-badge danger">Finalizar</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkContainer">
+                                        <div class="time">09:00</div>
+                                        <span class="z-badge success">Iniciar</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
