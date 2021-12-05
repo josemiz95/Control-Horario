@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ChecksController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,10 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
         Route::get('/{id}', [UsersController::class, 'get'])->name('api.users.get');
         Route::post('/', [UsersController::class, 'create'])->name('api.users.create');
         Route::put('/{id}', [UsersController::class, 'update'])->name('api.users.update');
+    });
+
+    Route::group(['prefix' => 'session'], function () {
+        Route::get('/lastcheck', [SessionController::class, 'getLastCheck'])->name('api.session.lastcheck');
     });
 
     Route::group(['prefix' => 'check'], function () {

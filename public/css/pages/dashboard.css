@@ -29,6 +29,12 @@
         color: var(--white);
         background-color:  var(--danger);
     }
+    .btn-checkio.error{
+        cursor: not-allowed;
+        color: var(--dark);
+        background-color:  var(--disabled);
+        transition: background 0.5s, color 0.5s;
+    }
 
 .checkContainer{
     display: flex;

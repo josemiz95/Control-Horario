@@ -22,12 +22,7 @@
                             <h3>Entrar</h3>
                         </div> --}}
 
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="z-button btn-checkio out"><ion-icon name="stop-outline"></ion-icon></ion-icon></a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center pt-2">
-                            <h3>Salir</h3>
-                        </div>
+                        <z-check-button></z-check-button>
 
                         <div>
                             <ul class="z-time-line">
@@ -77,4 +72,5 @@
     {{-- Components --}}
     <script src="{{config('app.url')}}/js/components/dashboard/calendar.js"></script>
     <script src="{{config('app.url')}}/js/components/dashboard/widgets.js"></script>
+    <script src="{{config('app.url')}}/js/components/dashboard/check-button.js"></script>
 @endsection
