@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Constants\Checks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
-
     public function getLastCheck(){
         $session = Auth::user();
 
@@ -21,5 +21,19 @@ class SessionController extends Controller
         }
 
         return response(['actual'=>Checks::$out, 'next'=>Checks::$in], 200);
+    }
+
+    public function getTodayChecks(){
+        $session = Auth::user();
+        $checks = $session->checks()->where('check_time','>', Carbon::today())
+                          ->orderBy('check_time','desc')->get();
+
+        return response($checks, 200);
+    }
+
+    public function getChecks(){
+        $session = Auth::user();
+
+        return response($session->checks, 200);
     }
 }

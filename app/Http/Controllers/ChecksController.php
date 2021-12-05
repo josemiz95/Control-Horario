@@ -26,7 +26,7 @@ class ChecksController extends Controller
 
                 $check = $slotToday->createCheck($action);
 
-                return response(['slot'=>$slotToday, 'check'=>$check], 201);
+                return response($check, 201);
 
             } elseif ($action == Checks::$in) {
                 $slotToday = $user->timeSlots()->create([
@@ -36,7 +36,7 @@ class ChecksController extends Controller
 
                 $check = $slotToday->createCheck($action);
 
-                return response(['slot'=>$slotToday, 'check'=>$check], 201);
+                return response($check, 201);
             }
         }
 

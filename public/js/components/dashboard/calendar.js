@@ -88,7 +88,7 @@ class UserFrom extends HTMLElement {
         const firstDay = new Date(this.year, this.month, 1);
         const lastDay = new Date(this.year, this.month+1, 0);
         this._calendarBody.innerHTML = '';
-        console.log(firstDay);
+        
         // Fill blank days
         for (let i = 0; i < firstDay.getDay()-1; i++) {
             const element = document.createElement('div');

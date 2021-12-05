@@ -34,6 +34,8 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
 
     Route::group(['prefix' => 'session'], function () {
         Route::get('/lastcheck', [SessionController::class, 'getLastCheck'])->name('api.session.lastcheck');
+        Route::get('/checks/today', [SessionController::class, 'getTodayChecks'])->name('api.session.getcheckstoday');
+        Route::get('/checks/all', [SessionController::class, 'getTChecks'])->name('api.session.getchecks');
     });
 
     Route::group(['prefix' => 'check'], function () {

@@ -33,7 +33,8 @@ class User extends Authenticatable
         'password',
         'remember_token',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'laravel_through_key'
     ];
 
     public function role(){
@@ -42,6 +43,10 @@ class User extends Authenticatable
 
     public function timeSlots(){
         return $this->hasMany(TimeSlot::class, 'user_id');
+    }
+
+    public function checks(){
+        return $this->hasManyThrough(TimeCheck::class, TimeSlot::class, 'user_id', 'slot_id');
     }
 
 }

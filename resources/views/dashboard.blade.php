@@ -24,28 +24,7 @@
 
                         <z-check-button></z-check-button>
 
-                        <div>
-                            <ul class="z-time-line">
-                                <li>
-                                    <div class="checkContainer">
-                                        <div class="time">10:30</div>
-                                        <div class="z-badge success">Iniciar</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="checkContainer">
-                                        <div class="time">10:00</div>
-                                        <span class="z-badge danger">Finalizar</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="checkContainer">
-                                        <div class="time">09:00</div>
-                                        <span class="z-badge success">Iniciar</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <z-time-line></z-time-line>
                     </div>
                 </div>
             </div>
@@ -73,4 +52,5 @@
     <script src="{{config('app.url')}}/js/components/dashboard/calendar.js"></script>
     <script src="{{config('app.url')}}/js/components/dashboard/widgets.js"></script>
     <script src="{{config('app.url')}}/js/components/dashboard/check-button.js"></script>
+    <script src="{{config('app.url')}}/js/components/dashboard/timeline.js"></script>
 @endsection

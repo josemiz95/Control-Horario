@@ -80,7 +80,11 @@ class CheckButton extends HTMLElement {
                 url: app.url+"/api/check/"+check,
                 method: 'GET',
                 success: (response) => {
+                    const checklist = document.querySelector('z-time-line');
                     console.log(response);
+                    if(checklist)
+                        checklist.appendCheck(response);
+
                     next();
                 },
                 fail: () => {

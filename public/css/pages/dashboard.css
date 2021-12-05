@@ -40,5 +40,6 @@
     display: flex;
 }
     .checkContainer .time{
-        min-width: 50px;
+        min-width: 65px;
+        padding-right: 5px;
     }
