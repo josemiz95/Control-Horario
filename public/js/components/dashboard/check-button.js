@@ -81,7 +81,6 @@ class CheckButton extends HTMLElement {
                 method: 'GET',
                 success: (response) => {
                     const checklist = document.querySelector('z-time-line');
-                    console.log(response);
                     if(checklist)
                         checklist.appendCheck(response);
 
