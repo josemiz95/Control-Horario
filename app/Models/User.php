@@ -49,4 +49,10 @@ class User extends Authenticatable
         return $this->hasManyThrough(TimeCheck::class, TimeSlot::class, 'user_id', 'slot_id');
     }
 
+    public function getChecksDate($date){
+        return $this->hasManyThrough(TimeCheck::class, TimeSlot::class, 'user_id', 'slot_id')
+                    ->where('check_time','>', $date)
+                    ->orderBy('check_time','asc')->get();
+    }
+
 }

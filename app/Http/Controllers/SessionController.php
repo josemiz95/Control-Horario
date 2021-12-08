@@ -25,8 +25,7 @@ class SessionController extends Controller
 
     public function getTodayChecks(){
         $session = Auth::user();
-        $checks = $session->checks()->where('check_time','>', Carbon::today())
-                          ->orderBy('check_time','asc')->get();
+        $checks = $session->getChecksDate(Carbon::today());
 
         return response($checks, 200);
     }
