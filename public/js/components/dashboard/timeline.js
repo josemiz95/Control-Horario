@@ -18,7 +18,7 @@ class TimeLine extends HTMLElement {
                     const checkElement = this._getCheckElement(check);
                     const listElement = document.createElement('li');
                     listElement.append(checkElement);
-                    this._list.append(listElement);
+                    this._list.prepend(listElement);
                 });
             }
         });
