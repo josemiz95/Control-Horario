@@ -36,10 +36,13 @@
         transition: background 0.5s, color 0.5s;
     }
 
-.checkContainer{
-    display: flex;
-}
-    .checkContainer .time{
-        min-width: 65px;
-        padding-right: 5px;
+ul.z-time-line{
+    margin-top: 2rem;
     }
+    .checkContainer{
+        display: flex;
+    }
+        .checkContainer .time{
+            min-width: 65px;
+            padding-right: 5px;
+        }

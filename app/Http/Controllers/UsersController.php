@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -82,5 +83,13 @@ class UsersController extends Controller
         }
         
         return response(['status'=>false, 'errors'=>$validation->errors()->toArray()], 403);
+    }
+
+    public function getTodayChecks($id){
+        $user = User::findOrFail($id);
+        $checks = $user->checks()->where('check_time','>', Carbon::today())
+                          ->orderBy('check_time','desc')->get();
+
+        return response($checks, 200);
     }
 }

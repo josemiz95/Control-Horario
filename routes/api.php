@@ -30,6 +30,8 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
         Route::get('/{id}', [UsersController::class, 'get'])->name('api.users.get');
         Route::post('/', [UsersController::class, 'create'])->name('api.users.create');
         Route::put('/{id}', [UsersController::class, 'update'])->name('api.users.update');
+
+        Route::get('/{id}/checks/today', [UsersController::class, 'getTodayChecks'])->name('api.users.getTodayChecks');
     });
 
     Route::group(['prefix' => 'session'], function () {

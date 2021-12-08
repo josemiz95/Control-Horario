@@ -3,7 +3,7 @@ class UserCard extends HTMLElement {
         super();
         this.user = {};
         this._viewBtn = null;
-        this._clockBtn = null;
+        this._viewCheckBtn = null;
         this._statusBtn = null;
     }
 
@@ -13,10 +13,11 @@ class UserCard extends HTMLElement {
             this.innerHTML = this._buildCard();
 
             this._viewBtn = this.querySelector('a.view-btn');
-            this._clockBtn = this.querySelector('a.clock-btn');
+            this._viewCheckBtn = this.querySelector('a.clock-btn');
             this._statusBtn = this.querySelector('a.status-btn');
 
             this._viewBtn.addEventListener('click', this._view.bind(this));
+            this._viewCheckBtn.addEventListener('click', this._viewChecks.bind(this));
         }
     }
 
@@ -36,10 +37,8 @@ class UserCard extends HTMLElement {
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-center col user-links pt-2">
-                            <a class="view-btn"><ion-icon class="z-color-primary z-font-size-24 mx-2" name="eye-outline"></ion-icon></a>
-                            <a class="clock-btn"><ion-icon class="z-color-secondary z-font-size-24 mx-2"  name="stopwatch-outline"></ion-icon></a>
-                            <a class="status-btn"><ion-icon class="z-color-success z-font-size-24 mx-2" name="checkmark-circle-outline"></ion-icon></a>
-                            <!--<ion-icon class="z-color-warning z-font-size-24" name="close-circle-outline"></ion-icon>--!>
+                            <a class="view-btn" title="Ver datos"><ion-icon class="z-color-primary z-font-size-24 mx-2" name="eye-outline" title="Ver datos"></ion-icon></a>
+                            <a class="clock-btn" title="Ver fichajes de hoy"><ion-icon class="z-color-secondary z-font-size-24 mx-2"  name="stopwatch-outline" title="Ver fichajes de hoy"></ion-icon></a>
                         </div>
                     </div>
                 </div>`;
@@ -47,6 +46,11 @@ class UserCard extends HTMLElement {
 
     _view(e){
         const viewEvent = new Event('viewUser', {bubbles: true, composed: true});
+        e.target.dispatchEvent(viewEvent);
+    }
+
+    _viewChecks(e){
+        const viewEvent = new Event('viewUserChecks', {bubbles: true, composed: true});
         e.target.dispatchEvent(viewEvent);
     }
 }

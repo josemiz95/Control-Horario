@@ -1,6 +1,7 @@
 const newUserBtn = document.getElementById('new-user-btn');
 const usersContainer = document.getElementById('users-container');
 const usersForm = document.querySelector('z-user-form#form-user-modal');
+const usersChecks = document.querySelector('z-user-timeline#time-line-user-modal');
 const searchInput = document.getElementById('search-input');
 
 getAndSetUsers();
@@ -58,6 +59,12 @@ function createUserCard(user){
             usersForm.setAttribute('title', 'Modificar '+this.user.name);
             usersForm.setAttribute('action', 'update');
             usersForm.open();
+        });
+
+        userCard.addEventListener('viewUserChecks', function(e){
+            usersChecks.setAttribute('user', this.user.id);
+            usersChecks.setAttribute('title', this.user.name);
+            usersChecks.open();
         });
         
         usersContainer.append(userCard);

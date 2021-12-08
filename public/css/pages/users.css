@@ -35,3 +35,11 @@
 #new-user-btn{
     white-space: nowrap;
 }
+
+.checkContainer{
+    display: flex;
+}
+    .checkContainer .time{
+        min-width: 65px;
+        padding-right: 5px;
+    }

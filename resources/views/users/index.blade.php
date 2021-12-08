@@ -22,12 +22,14 @@
     </div>
 
     <z-user-form id="form-user-modal" title=""></z-user-form>
+    <z-user-timeline id="time-line-user-modal" title=""></z-user-timeline>
 @endsection
 
 @section('script')
 {{-- Components --}}
     <script src="{{config('app.url')}}/js/components/users/user-card.js"></script>
     <script src="{{config('app.url')}}/js/components/users/user-form.js"></script>
+    <script src="{{config('app.url')}}/js/components/users/user-timeline.js"></script>
 
 {{-- Scripts --}}
     <script src="{{config('app.url')}}/js/users/users.js"></script>

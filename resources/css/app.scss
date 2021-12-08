@@ -45,6 +45,10 @@ ul{
     cursor: not-allowed!important;
 }
 
+ion-icon {
+    pointer-events: none;
+}
+
 /****** helpers *******/
 @import "helpers/coloring";
 @import "helpers/fonts";
