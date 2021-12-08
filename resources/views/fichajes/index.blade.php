@@ -10,7 +10,7 @@
         <div class="z-card">
             <div class="z-card-body d-flex flex-wrap">
                 <div class="z-form-group m-2">
-                    <select name="users" id="users-select">
+                    <select name="user" id="users-select">
                         <option value="1">Josemi</option>
                     </select>
                 </div>

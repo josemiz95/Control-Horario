@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Constants\Checks;
 use App\Models\TimeSlot;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ChecksController extends Controller
 {
@@ -39,6 +41,26 @@ class ChecksController extends Controller
                 return response($check, 201);
             }
         }
+
+        return response(['message'=>'Action not allowed'], 400);
+    }
+
+    public function userChecksFromDate(Request $request){
+        $validation = Validator::make($request->all(),[
+            'user'=>'required|exists:users,id',
+            'date'=>'required|date',
+        ]);
+        
+        if(!$validation->fails()){
+            $user = User::find($request->input('user'));
+            $date = new Carbon($request->input('date'));
+
+            $timeSlots = $user->getTimeSlotsDate($date);
+            
+            return response($timeSlots, 200);
+        }
+        
+        return response(['status'=>false, 'errors'=>$validation->errors()->toArray()], 403);
 
         return response(['message'=>'Action not allowed'], 400);
     }

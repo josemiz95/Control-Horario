@@ -32,6 +32,10 @@ class TimeCheck extends Model
         'check_time'
     ];
 
+    protected $casts = [
+        'check_time'  => 'datetime:Y-m-d H:i:s',
+    ];
+
     public function timeSlot(){
         return $this->belongsTo(TimeSlot::class, 'slot_id');
     }

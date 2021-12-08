@@ -46,19 +46,6 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
     });
 
     Route::group(['prefix' => 'checks'], function () {
-        Route::get('/', [ChecksController::class, 'list'])->name('api.checks.list');
-        Route::get('/{id}', [ChecksController::class, 'get'])->name('api.checks.get');
-        Route::post('/', [ChecksController::class, 'create'])->name('api.checks.create');
-        Route::put('/{id}', [ChecksController::class, 'update'])->name('api.checks.update');
-    });
-});
-
-Route::group(['prefix' => 'tests'], function () {
-    Route::get('/calculateSlot', function(){
-        $slots = TimeSlot::all();
-        foreach($slots as $slot){
-            $slot->calculateTotalTime();
-        }
-        return response(true);
+        Route::post('/date', [ChecksController::class, 'userChecksFromDate'])->name('api.checks.user.date');
     });
 });

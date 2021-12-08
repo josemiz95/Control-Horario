@@ -14,6 +14,8 @@ class TimeSlot extends Model
 
     protected $table = 'time_slots';
 
+    protected $with = ['timeChecks'];
+
     protected $fillable = [
         'user_id',
         'date',
@@ -31,6 +33,10 @@ class TimeSlot extends Model
         'created_at',
         'updated_at',
         'date'
+    ];
+
+    protected $casts = [
+        'date'  => 'date:Y-m-d',
     ];
 
     public function timeChecks(){
