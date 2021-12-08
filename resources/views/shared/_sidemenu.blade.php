@@ -16,7 +16,7 @@
             </a>
         </li>
         <li  {{isset($active_tab) && strtolower($active_tab) == 'checks' ? 'class=active':''}}>
-            <a href="">
+            <a href="{{route('web.checks')}}">
                 <span class="icon"><ion-icon name="stopwatch-outline"></ion-icon></span>
                 <span class="title">Fichajes</span>
             </a>

@@ -26,6 +26,12 @@ class TimeCheck extends Model
         'laravel_through_key'
     ];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'check_time'
+    ];
+
     public function timeSlot(){
         return $this->belongsTo(TimeSlot::class, 'slot_id');
     }

@@ -25,13 +25,13 @@ class ChecksController extends Controller
                 }
 
                 $check = $slotToday->createCheck($action);
+                $slotToday->calculateTotalTime();
 
                 return response($check, 201);
 
             } elseif ($action == Checks::$in) {
                 $slotToday = $user->timeSlots()->create([
                     'date' => date('Y-m-d'),
-                    'total_time' => '00:00:00'
                 ]);
 
                 $check = $slotToday->createCheck($action);

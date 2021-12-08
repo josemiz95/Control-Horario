@@ -51,7 +51,9 @@ class User extends Authenticatable
 
     public function getChecksDate($date){
         return $this->hasManyThrough(TimeCheck::class, TimeSlot::class, 'user_id', 'slot_id')
-                    ->where('check_time','>', $date)
+                    ->whereHas('timeSlot', function($q) use($date){
+                        $q->where('date', $date);
+                    })
                     ->orderBy('check_time','asc')->get();
     }
 

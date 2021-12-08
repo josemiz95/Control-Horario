@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Constants\Checks;
+use Helpers\Time;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,12 +18,19 @@ class TimeSlot extends Model
         'user_id',
         'date',
         'total_time',
+        'total_seconds',
         'created'
     ];
 
     protected $hidden = [
         'created_at',
         'updated_at'
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'date'
     ];
 
     public function timeChecks(){
@@ -37,5 +46,30 @@ class TimeSlot extends Model
             'type' => $action,
             'check_time' => Carbon::now()->toDateTimeString(),
         ]);
+    }
+
+    public function calculateTotalTime(){
+        $checks = $this->timeChecks;
+        $totalTimeSeconds = 0;
+
+        if(count($checks)>1){
+            $lastCheck = null;
+            foreach($checks as $check){
+                if($lastCheck!= null && $lastCheck->type == Checks::$in && $check->type == Checks::$out){
+                    $totalTimeSeconds += $check->check_time->diffInSeconds($lastCheck->check_time);
+                    $lastCheck = null;
+                    continue;
+                }
+
+                $lastCheck = $check;
+            }
+        }
+
+        $totalTime = Time::secondsToHours($totalTimeSeconds);
+        $this->total_time = $totalTime;
+        $this->total_seconds = $totalTimeSeconds;
+        $this->save();
+
+        return $totalTime;
     }
 }

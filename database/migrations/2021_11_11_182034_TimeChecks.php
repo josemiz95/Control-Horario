@@ -17,7 +17,8 @@ class TimeChecks extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->date('date');
-            $table->time('total_time');
+            $table->time('total_time')->default("00:00:00");
+            $table->integer('total_seconds')->default(0);
 
             $table->boolean('created')->default(0);
             
