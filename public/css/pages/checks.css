@@ -9,3 +9,12 @@ ul.z-time-line .checkContainer .time{
     min-width: 65px;
     padding-right: 5px;
 }
+
+.z-card-header h2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+    .z-card-header h2 .z-badge{
+        margin-left: 1rem;
+    }

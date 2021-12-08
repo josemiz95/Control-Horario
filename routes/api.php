@@ -47,5 +47,6 @@ Route::group(['middleware'=>['auth:sanctum']], function () {
 
     Route::group(['prefix' => 'checks'], function () {
         Route::post('/date', [ChecksController::class, 'userChecksFromDate'])->name('api.checks.user.date');
+        Route::get('/recalculate/{id}', [ChecksController::class, 'recalculateSlotTime'])->name('api.checks.recalculate');
     });
 });

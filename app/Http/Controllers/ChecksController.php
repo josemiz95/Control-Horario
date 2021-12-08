@@ -27,6 +27,8 @@ class ChecksController extends Controller
                 }
 
                 $check = $slotToday->createCheck($action);
+                
+                $slotToday = $slotToday->fresh();
                 $slotToday->calculateTotalTime();
 
                 return response($check, 201);
@@ -45,6 +47,13 @@ class ChecksController extends Controller
         return response(['message'=>'Action not allowed'], 400);
     }
 
+    public function recalculateSlotTime($id){
+        $slot = TimeSlot::findOrFail($id);
+        $totalTime = $slot->calculateTotalTime();
+
+        return response(['slot'=>$slot, 'total_time'=>$totalTime]);
+    }
+
     public function userChecksFromDate(Request $request){
         $validation = Validator::make($request->all(),[
             'user'=>'required|exists:users,id',
@@ -57,8 +66,9 @@ class ChecksController extends Controller
             $date = Carbon::create($request->input('date'));
 
             $timeSlots = $user->getTimeSlotsDate($date);
+            $timeSlotsTotal = $user->getTimeSlotsTotalDate($date);
 
-            return response($timeSlots, 200);
+            return response(['slots'=>$timeSlots, 'total_time'=>$timeSlotsTotal], 200);
         }
         
         return response(['status'=>false, 'errors'=>$validation->errors()->toArray()], 403);

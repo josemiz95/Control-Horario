@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Helpers\Time;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -59,6 +60,11 @@ class User extends Authenticatable
 
     public function getTimeSlotsDate($date){
         return $this->timeSlots()->where('date', $date)->get();
+    }
+
+    public function getTimeSlotsTotalDate($date){
+        $totalSeconds = $this->timeSlots()->where('date', $date)->sum('total_seconds');
+        return Time::secondsToHours($totalSeconds);
     }
 
 }

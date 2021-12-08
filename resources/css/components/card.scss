@@ -8,7 +8,7 @@
     .z-card .z-card-header{
         padding: 15px 15px 0 15px;
     }
-    .z-card .z-card-header *{
+    .z-card .z-card-header > *{
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
