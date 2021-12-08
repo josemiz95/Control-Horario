@@ -26,12 +26,6 @@ class TimeCheck extends Model
         'laravel_through_key'
     ];
 
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'check_time'
-    ];
-
     protected $casts = [
         'check_time'  => 'datetime:Y-m-d H:i:s',
     ];

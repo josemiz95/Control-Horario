@@ -28,15 +28,9 @@ class TimeSlot extends Model
         'created_at',
         'updated_at'
     ];
-
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'date'
-    ];
-
+    
     protected $casts = [
-        'date'  => 'date:Y-m-d',
+        'date'  => 'datetime:Y-m-d',
     ];
 
     public function timeChecks(){

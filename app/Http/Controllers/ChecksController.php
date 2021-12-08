@@ -53,15 +53,14 @@ class ChecksController extends Controller
         
         if(!$validation->fails()){
             $user = User::find($request->input('user'));
-            $date = new Carbon($request->input('date'));
+            // $date = new Carbon($request->input('date'));
+            $date = Carbon::create($request->input('date'));
 
             $timeSlots = $user->getTimeSlotsDate($date);
-            
+
             return response($timeSlots, 200);
         }
         
         return response(['status'=>false, 'errors'=>$validation->errors()->toArray()], 403);
-
-        return response(['message'=>'Action not allowed'], 400);
     }
 }

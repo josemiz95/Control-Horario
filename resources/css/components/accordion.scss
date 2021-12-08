@@ -5,37 +5,33 @@
             position: relative;
             color: var(--dark);
             cursor: pointer;
-            padding: 18px;
+            padding: 15px;
             width: 100%;
             text-align: left;
             outline: none;
             font-size: 15px;
-            display: block;
+            display: flex;
+            justify-content: left;
+            align-items: center;
             border: 1px solid var(--input-border);
             transition: 0.5s;
         }
             .z-accordion .z-accordion-header::after{
                 content: "+";
-                position: absolute;
-                right: 15px;
-                top: 15px;
+                margin-left: auto;
                 font-size: 20px;
                 font-weight: 400;
-                display: flex;
-                justify-content: center;
                 align-items: center;
             }
             .z-accordion.z-active .z-accordion-header::after{
                 content: "-";
             }
         .z-accordion .z-accordion-body{
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s, opacity 0.5s linear
+            display: none;
+            transition: 0.5s;
         }
         .z-accordion.z-active .z-accordion-body{
-            visibility: visible;
-            opacity: 1;
+            display: block;
             padding: 15px;
             border: 1px solid var(--input-border);
             border-top: 0;
@@ -43,9 +39,8 @@
             border-bottom-right-radius: $border_radius;
         }
         .z-accordion.z-active .z-accordion-header{
-            background-color: var(--primary);
-            border: 1px solid var(--primary);
-            color: var(--light);
+            background-color: var(--primary-light);
+            border: 1px solid var(--primary-light);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }

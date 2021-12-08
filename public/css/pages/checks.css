@@ -1,0 +1,11 @@
+.z-accordion .z-accordion-header .z-badge{
+    margin-right: 1rem;
+}
+
+ul.z-time-line .checkContainer{
+    display: flex;
+}
+ul.z-time-line .checkContainer .time{
+    min-width: 65px;
+    padding-right: 5px;
+}

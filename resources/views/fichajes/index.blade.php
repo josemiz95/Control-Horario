@@ -1,7 +1,7 @@
 @extends('shared.master', ['active_tab'=>'checks', 'breadcrumbs'=>['Fichajes']])
 
 @section('css-bottom')
-    <link rel="stylesheet" href="{{config('app.url')}}/css/pages/users.css">
+    <link rel="stylesheet" href="{{config('app.url')}}/css/pages/checks.css">
 @endsection
 
 @section('content')
@@ -25,7 +25,7 @@
                 <h2>Fichajes:</h2>
             </div>
             <div class="z-card-body">
-
+                <z-accordion class="z-accordion" title="<div class='z-badge info lg'>04:00:00</div> Tramo #1"></z-accordion>
             </div>
         </div>
     </div>
@@ -33,6 +33,7 @@
 
 @section('script')
 {{-- Components --}}
+<script src="{{config('app.url')}}/js/components/checks/check-accordion.js"></script>
 
 
 {{-- Scripts --}}
