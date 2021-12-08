@@ -191,7 +191,7 @@
                 </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-4">
                 <div class="z-card">
                     <div class="z-card-body">
                         <div class="z-alert primary"> ALERT </div>
@@ -229,6 +229,26 @@
                 </div>
             </div>
 
+            <div class="col-8">
+                <div class="z-card">
+                    <div class="z-card-body">
+                        <div class="z-accordion z-active">
+                            <a class="z-accordion-header">Accordion #1</a>
+                            <div class="z-accordion-body">
+                                CONTENIDO
+                            </div>
+                        </div>
+
+                        <div class="z-accordion">
+                            <a class="z-accordion-header">Accordion #2</a>
+                            <div class="z-accordion-body">
+                                CONTENIDO
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="z-modal z-modal-lg">
                 <div class="z-modal-contentainer">
                     <div class="z-modal-header">
@@ -240,8 +260,6 @@
                     </div>
                 </div>
             </div>
-
-            
 
         </div>
     </div>

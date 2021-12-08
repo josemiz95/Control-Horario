@@ -1,0 +1,55 @@
+    .z-accordion .z-accordion-header{
+        border-radius: $border_radius;
+    }
+        .z-accordion .z-accordion-header{
+            position: relative;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            display: block;
+            border: 1px solid var(--input-border);
+            transition: 0.5s;
+        }
+            .z-accordion .z-accordion-header::after{
+                content: "+";
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                font-size: 20px;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .z-accordion.z-active .z-accordion-header::after{
+                content: "-";
+            }
+        .z-accordion .z-accordion-body{
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear
+        }
+        .z-accordion.z-active .z-accordion-body{
+            visibility: visible;
+            opacity: 1;
+            padding: 15px;
+            border: 1px solid var(--input-border);
+            border-top: 0;
+            border-bottom-left-radius: $border_radius;
+            border-bottom-right-radius: $border_radius;
+        }
+        .z-accordion.z-active .z-accordion-header{
+            background-color: var(--primary);
+            border: 1px solid var(--primary);
+            color: var(--light);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+.z-accordion ~ .z-accordion{
+    margin-top: 15px;
+}
