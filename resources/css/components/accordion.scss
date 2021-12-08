@@ -13,7 +13,7 @@
             display: flex;
             justify-content: left;
             align-items: center;
-            border: 1px solid var(--input-border);
+            border:2px solid var(--primary-light);
             transition: 0.5s;
         }
             .z-accordion .z-accordion-header::after{
@@ -33,14 +33,14 @@
         .z-accordion.z-active .z-accordion-body{
             display: block;
             padding: 15px;
-            border: 1px solid var(--input-border);
+            border:2px solid var(--primary-light);
             border-top: 0;
             border-bottom-left-radius: $border_radius;
             border-bottom-right-radius: $border_radius;
         }
         .z-accordion.z-active .z-accordion-header{
             background-color: var(--primary-light);
-            border: 1px solid var(--primary-light);
+            border:2px solid var(--primary-light);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
