@@ -9,17 +9,22 @@
                 <span class="title">Home</span>
             </a>
         </li>
-        <li  {{isset($active_tab) && strtolower($active_tab) == 'users' ? 'class=active':''}}>
-            <a href="{{route('web.users')}}">
-                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                <span class="title">Usuarios</span>
-            </a>
-        </li>
-        <li  {{isset($active_tab) && strtolower($active_tab) == 'checks' ? 'class=active':''}}>
-            <a href="{{route('web.checks')}}">
-                <span class="icon"><ion-icon name="stopwatch-outline"></ion-icon></span>
-                <span class="title">Fichajes</span>
-            </a>
-        </li>
+        @if (Auth::user()->hasAccess('users'))
+            <li  {{isset($active_tab) && strtolower($active_tab) == 'users' ? 'class=active':''}}>
+                <a href="{{route('web.users')}}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Usuarios</span>
+                </a>
+            </li>
+        @endif
+
+        @if (Auth::user()->hasAccess('checks'))
+            <li  {{isset($active_tab) && strtolower($active_tab) == 'checks' ? 'class=active':''}}>
+                <a href="{{route('web.checks')}}">
+                    <span class="icon"><ion-icon name="stopwatch-outline"></ion-icon></span>
+                    <span class="title">Fichajes</span>
+                </a>
+            </li>
+        @endif
     </ul>
 </div>

@@ -21,6 +21,6 @@ class Role extends Model
     }
 
     public function access(){
-        return $this->belongsToMany(Role::class, 'roles_access', 'role_id', 'access_id');
+        return $this->belongsToMany(Access::class, 'roles_access', 'role_id', 'access_id');
     }
 }

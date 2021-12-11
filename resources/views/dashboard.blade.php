@@ -32,7 +32,7 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <z-widget-leavedays amount="30" class="col-4"></z-widget-leavedays>
+                        <z-widget-leavedays amount="0" class="col-4"></z-widget-leavedays>
 
                         <z-widget-calendar class="col-4"></z-widget-calendar>
 
@@ -53,4 +53,8 @@
     <script src="{{config('app.url')}}/js/components/dashboard/widgets.js"></script>
     <script src="{{config('app.url')}}/js/components/dashboard/check-button.js"></script>
     <script src="{{config('app.url')}}/js/components/dashboard/timeline.js"></script>
+
+    {{-- Scripts --}}
+    <script src="{{config('app.url')}}/js/dashboard/index.js"></script>
+
 @endsection

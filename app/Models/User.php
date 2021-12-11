@@ -67,4 +67,9 @@ class User extends Authenticatable
         return Time::secondsToHours($totalSeconds);
     }
 
+    public function hasAccess($access){
+        $hasAccess = $this->role->access()->where('name', $access)->count();
+        
+        return $hasAccess > 0;
+    }
 }

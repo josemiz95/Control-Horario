@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
+    public function getUserData(){
+        $session = Auth::user();
+
+        return response($session, 200);
+    }
+
     public function getLastCheck(){
         $session = Auth::user();
 

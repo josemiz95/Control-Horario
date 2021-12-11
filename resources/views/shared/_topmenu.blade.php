@@ -16,12 +16,13 @@
 
     <div> {{-- Rigth --}}
         <div class="settings">
-            <span class="option" ><ion-icon class="option" name="settings-outline"></ion-icon></span>
             <span class="option" id="colorsToggle"><ion-icon name="moon-outline"></ion-icon></span>
         </div>
         <div class="user">
             <span class="avatar-user size-sm circle" style="color:#AC3EFF; background-color:#AC3EFF25">JMZ</span>
         </div>
-        
+        <div class="settings">
+            <a class="option z-color-danger" href="{{route('login')}}"><ion-icon name="power-outline"></ion-icon></a>
+        </div>
     </div>
 </div>

@@ -49,7 +49,7 @@ class CreateUsersTable extends Migration
         });
 
         Schema::create('roles_access', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->unique();
+            $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('access_id');
             
             $table->primary(['role_id','access_id']);

@@ -18,6 +18,7 @@ loginForm.addEventListener('submit', async function(e){
         fail: (response) => {
             console.log("ERROR");
             console.log(response);
+            alert("Usuario o contraseña no coinciden");
         }
     });
 
