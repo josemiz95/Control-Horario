@@ -34,7 +34,7 @@ class TimeSlot extends Model
     ];
 
     public function timeChecks(){
-        return $this->hasMany(timeCheck::class, 'slot_id', 'id');
+        return $this->hasMany(TimeCheck::class, 'slot_id', 'id');
     }
 
     public function user(){
